@@ -352,3 +352,49 @@ SET TONGTIEN = (SELECT SUM(ct.GIA)
 				FROM CT_DMVC ct
 				WHERE DONMUAVC.MADON = CT.MADON
 				GROUP BY ct.MADON)
+
+create table GOIVC
+(
+	magoi char(8) primary key,
+	tongtien decimal(19,4)
+);
+
+create table ct_goivc 
+(
+	magoi char(8) not null, 
+	mavc char(8) not null
+);
+
+alter table ct_goivc
+add constraint pk_goi primary key(magoi, mavc);
+
+alter table ct_goivc
+add constraint fk_vc_goi foreign key (mavc) references vaccine (mavc)
+alter table ct_goivc
+add constraint fk_goi_ct foreign key (magoi) references goivc (magoi)
+
+BULK INSERT goivc
+FROM '\\Mac\AllFiles\Users\Study\temp\goi.csv'
+WITH
+(
+    FIRSTROW = 1, -- as 1st one is header
+    FIELDTERMINATOR = ',',  --CSV field delimiter
+    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    TABLOCK
+)
+
+BULK INSERT ct_goivc
+FROM '\\Mac\AllFiles\Users\Study\temp\ctgoi.csv'
+WITH
+(
+    FIRSTROW = 2, -- as 1st one is header
+    FIELDTERMINATOR = ',',  --CSV field delimiter
+    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    TABLOCK
+)
+
+UPDATE goivc
+SET TONGTIEN = (SELECT SUM(vc.GIA)
+				FROM ct_goivc ct join vaccine vc on ct.mavc = vc.MAVC
+				WHERE goivc.magoi = CT.magoi
+				GROUP BY ct.magoi)
