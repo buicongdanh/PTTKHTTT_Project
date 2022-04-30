@@ -411,11 +411,11 @@ set sotien = (select dm.TONGTIEN/(select count(mahd) from hoadon hd where hd.mad
 
 CREATE OR ALTER PROC USP_Login
 	@USRNAME CHAR(8),
-	@PASSWRD CHAR(8)
+	@PASSWRD CHAR(8),
+	@ACC_TYPE INT OUT
 AS
 BEGIN
 	SET NOCOUNT ON;
-	declare @Acc_Type int
 	IF NOT EXISTS (SELECT * FROM TAIKHOAN WHERE USRNAME = @USRNAME AND PASSWRD = @PASSWRD)
 		SET @Acc_Type = -1
 	ELSE	
@@ -423,5 +423,3 @@ BEGIN
 	SET NOCOUNT OFF;
 	RETURN @Acc_Type
 END
-
-

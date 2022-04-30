@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PTTKHTTT_Project
 {
@@ -73,7 +74,27 @@ namespace PTTKHTTT_Project
 
         private void DangKyTiemChung_Load(object sender, EventArgs e)
         {
+            String q = "select HOTEN, DIACHI, SDT from KHACHHANG WHERE MAKH ='" + Menu_KH.MaKH + "'";
 
+            SqlCommand cmd = new SqlCommand(q);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            cmd.Connection = Menu_KH.con;
+            try
+            {
+                DataSet dataset = new DataSet();
+                da.Fill(dataset);
+
+                DataTable table = dataset.Tables[0]; // Get the data table.
+                textBox2.Text = Menu_KH.MaKH;
+                textBox3.Text = table.Rows[0].ItemArray[0].ToString();
+                textBox4.Text = table.Rows[0].ItemArray[1].ToString();
+                textBox5.Text = table.Rows[0].ItemArray[2].ToString();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

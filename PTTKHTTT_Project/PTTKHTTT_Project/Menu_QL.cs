@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PTTKHTTT_Project
 {
     public partial class Menu_QL : Form
     {
+        public static string conString = "Data Source=FINN\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
+        public static SqlConnection con = new SqlConnection(conString);
         public Menu_QL()
         {
+            con.Open();
             InitializeComponent();
             panel_Menu.BackColor = System.Drawing.ColorTranslator.FromHtml("#205072");
             panel_Heading.BackColor = System.Drawing.ColorTranslator.FromHtml("#2c6975");
@@ -31,6 +35,7 @@ namespace PTTKHTTT_Project
 
         private void button2_Click(object sender, EventArgs e)
         {
+            con.Close();
             this.Close();
         }
 

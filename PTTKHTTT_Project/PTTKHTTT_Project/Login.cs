@@ -99,7 +99,7 @@ namespace PTTKHTTT_Project
                             {
                                 MessageBox.Show("Khách hàng đăng nhập thành công");
                                 this.Hide();
-                                var form_KH = new Menu_KH();
+                                var form_KH = new Menu_KH(username);
                                 form_KH.Closed += (s, args) => this.Close();
                                 form_KH.Show();
                                 break;
@@ -108,7 +108,7 @@ namespace PTTKHTTT_Project
                             {
                                 MessageBox.Show("Nhân viên đăng nhập thành công");
                                 this.Hide();
-                                var form_KH = new Menu_NV();
+                                var form_KH = new Menu_NV(username);
                                 form_KH.Closed += (s, args) => this.Close();
                                 form_KH.Show();
                                 break;

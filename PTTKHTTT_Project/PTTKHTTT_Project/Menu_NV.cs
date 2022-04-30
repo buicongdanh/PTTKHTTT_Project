@@ -16,8 +16,10 @@ namespace PTTKHTTT_Project
         //public static string conString = "Data Source=DESKTOP-2F5L5LM\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
         public static string conString = "Data Source=FINN\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
         public static SqlConnection con = new SqlConnection(conString);
-        public Menu_NV()
+        public string MaNV;
+        public Menu_NV(string username)
         {
+            MaNV = username;
             InitializeComponent();
             panel_Menu.BackColor = System.Drawing.ColorTranslator.FromHtml("#205072");
             panel_Heading.BackColor = System.Drawing.ColorTranslator.FromHtml("#2c6975");
@@ -47,6 +49,7 @@ namespace PTTKHTTT_Project
 
         private void button2_Click(object sender, EventArgs e)
         {
+            con.Close();
             this.Close();
         }
 

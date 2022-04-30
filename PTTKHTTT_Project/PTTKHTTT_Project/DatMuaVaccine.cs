@@ -12,6 +12,7 @@ namespace PTTKHTTT_Project
 {
     public partial class DatMuaVaccine : Form
     {
+        public string MaKH;
         public DatMuaVaccine()
         {
             InitializeComponent();

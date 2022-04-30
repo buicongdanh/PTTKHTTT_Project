@@ -38,7 +38,7 @@ namespace PTTKHTTT_Project
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 49);
+            this.dataGridView1.Location = new System.Drawing.Point(46, 59);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -53,10 +53,11 @@ namespace PTTKHTTT_Project
             this.button1.TabIndex = 1;
             this.button1.Text = "Phê duyệt";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(598, 628);
+            this.button2.Location = new System.Drawing.Point(587, 628);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 41);
             this.button2.TabIndex = 1;
@@ -74,6 +75,7 @@ namespace PTTKHTTT_Project
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PheDuyetDonDat";
             this.Text = "PheDuyetDonDat";
+            this.Load += new System.EventHandler(this.PheDuyetDonDat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
