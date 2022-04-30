@@ -62,6 +62,8 @@ namespace PTTKHTTT_Project
             res_btn();
             button4.TextAlign = ContentAlignment.MiddleRight;
             button4.BackColor = System.Drawing.ColorTranslator.FromHtml("#47cacc");
+            Form DangKyTiemChung = new DangKyTiemChung();
+            openChildForm(DangKyTiemChung);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -69,6 +71,8 @@ namespace PTTKHTTT_Project
             res_btn();
             button3.TextAlign = ContentAlignment.MiddleRight;
             button3.BackColor = System.Drawing.ColorTranslator.FromHtml("#47cacc");
+            Form TT_DKTiemChung = new TT_DKTiemChung();
+            openChildForm(TT_DKTiemChung);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -76,6 +80,8 @@ namespace PTTKHTTT_Project
             res_btn();
             button5.TextAlign = ContentAlignment.MiddleRight;
             button5.BackColor = System.Drawing.ColorTranslator.FromHtml("#47cacc");
+            Form DatMuaVaccine = new DatMuaVaccine();
+            openChildForm(DatMuaVaccine);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -90,11 +96,27 @@ namespace PTTKHTTT_Project
             res_btn();
             button2.TextAlign = ContentAlignment.MiddleRight;
             button2.BackColor = System.Drawing.ColorTranslator.FromHtml("#47cacc");
+            Form TT_DatVaccine = new TT_DatVaccine();
+            openChildForm(TT_DatVaccine);
         }
         //Button_Exit
         /*private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
         }*/
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_Childform.Controls.Add(childForm);
+            panel_Childform.Tag = childForm;
+            childForm.Show();
+        }
     }
 }

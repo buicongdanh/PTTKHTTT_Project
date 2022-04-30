@@ -49,11 +49,11 @@ namespace PTTKHTTT_Project
             // panel_Childform
             // 
             this.panel_Childform.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel_Childform.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Childform.Location = new System.Drawing.Point(0, 83);
+            this.panel_Childform.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel_Childform.Location = new System.Drawing.Point(320, 83);
             this.panel_Childform.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Childform.Name = "panel_Childform";
-            this.panel_Childform.Size = new System.Drawing.Size(1280, 717);
+            this.panel_Childform.Size = new System.Drawing.Size(960, 717);
             this.panel_Childform.TabIndex = 2;
             // 
             // button_Exit

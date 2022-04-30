@@ -53,11 +53,11 @@ namespace PTTKHTTT_Project
             // panel_Childform
             // 
             this.panel_Childform.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel_Childform.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Childform.Location = new System.Drawing.Point(0, 83);
+            this.panel_Childform.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel_Childform.Location = new System.Drawing.Point(320, 83);
             this.panel_Childform.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Childform.Name = "panel_Childform";
-            this.panel_Childform.Size = new System.Drawing.Size(1280, 717);
+            this.panel_Childform.Size = new System.Drawing.Size(960, 717);
             this.panel_Childform.TabIndex = 2;
             // 
             // button3
@@ -71,7 +71,7 @@ namespace PTTKHTTT_Project
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(320, 78);
             this.button3.TabIndex = 0;
-            this.button3.Text = "Xem thông tin tiêm chủng";
+            this.button3.Text = "Xem thông tin đăng ký tiêm chủng";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -118,7 +118,7 @@ namespace PTTKHTTT_Project
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(320, 78);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Lập danh sách vaccine đặt";
+            this.button2.Text = "Xem thông tin đơn đặt vaccine";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
