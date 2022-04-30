@@ -1,0 +1,14 @@
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\bin\Debug\PTTKHTTT_Project.exe.config
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\bin\Debug\PTTKHTTT_Project.exe
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\bin\Debug\PTTKHTTT_Project.pdb
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.csproj.AssemblyReference.cache
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.Login.resources
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.Properties.Resources.resources
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.csproj.GenerateResource.cache
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.csproj.CoreCompileInputs.cache
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.exe
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.pdb
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.Menu.resources
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.Menu_KH.resources
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.Menu_NV.resources
+C:\Users\ACER\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.Menu_QL.resources
