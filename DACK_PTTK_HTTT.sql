@@ -222,153 +222,153 @@ ALTER TABLE TAIKHOAN
 ADD CONSTRAINT FK_KH_TK FOREIGN KEY (USRNAME) REFERENCES KHACHHANG (MAKH)
 
 BULK INSERT KHACHHANG
-FROM '\\Mac\AllFiles\Users\Study\temp\khachhang.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\khachhang.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT vaccine
-FROM '\\Mac\AllFiles\Users\Study\temp\vc.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\vc.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT thekhachhang
-FROM '\\Mac\AllFiles\Users\Study\temp\thekh.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\thekh.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT hosotiemchung
-FROM '\\Mac\AllFiles\Users\Study\temp\hs.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\hs.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT ct_hstc
-FROM '\\Mac\AllFiles\Users\Study\temp\cths.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\cths.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT nhanvien
-FROM '\\Mac\AllFiles\Users\Study\temp\nv.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\nv.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT lichlamviec
-FROM '\\Mac\AllFiles\Users\Study\temp\lichlamviec.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\lichlamviec.csv'
 WITH
 (
     FIRSTROW = 1, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT lichranh
-FROM '\\Mac\AllFiles\Users\Study\temp\lichranh.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\lichranh.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT phieudktiem
-FROM '\\Mac\AllFiles\Users\Study\temp\pdkt.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\pdkt.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT hoadon
-FROM '\\Mac\AllFiles\Users\Study\temp\hoadon.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\hoadon.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT donmuavc
-FROM '\\Mac\AllFiles\Users\Study\temp\donmua.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\donmua.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT ct_dmvc
-FROM '\\Mac\AllFiles\Users\Study\temp\ctdm.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\ctdm.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT dsdatvaccine
-FROM '\\Mac\AllFiles\Users\Study\temp\nhaphang.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\nhaphang.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 
 BULK INSERT ct_dsdat
-FROM '\\Mac\AllFiles\Users\Study\temp\ctnh.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\ctnh.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT taikhoan
-FROM '\\Mac\AllFiles\Users\Study\temp\taikhoan.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\taikhoan.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
@@ -379,22 +379,22 @@ SET TONGTIEN = (SELECT SUM(ct.Gia)
 				GROUP BY ct.MADON)
 
 BULK INSERT goivc
-FROM '\\Mac\AllFiles\Users\Study\temp\goi.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\goi.csv'
 WITH
 (
     FIRSTROW = 1, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
 BULK INSERT ct_goivc
-FROM '\\Mac\AllFiles\Users\Study\temp\ctgoi.csv'
+FROM 'C:\Users\ACER\Desktop\PTTKHTTT_Project\Data\ctgoi.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
     FIELDTERMINATOR = ',',  --CSV field delimiter
-    ROWTERMINATOR = '0x0a',   --Use to shift the control to next row
+    ROWTERMINATOR = '\n',   --Use to shift the control to next row
     TABLOCK
 )
 
@@ -408,5 +408,20 @@ update hoadon
 set sotien = (select dm.TONGTIEN/(select count(mahd) from hoadon hd where hd.madon = dm.MADON group by(madon))
 			from donmuavc dm 
 			where dm.madon = hoadon.madon)
+
+CREATE OR ALTER PROC USP_Login
+	@USRNAME CHAR(8),
+	@PASSWRD CHAR(8)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	declare @Acc_Type int
+	IF NOT EXISTS (SELECT * FROM TAIKHOAN WHERE USRNAME = @USRNAME AND PASSWRD = @PASSWRD)
+		SET @Acc_Type = -1
+	ELSE	
+		SET @Acc_Type = (SELECT TK_TYPE FROM TAIKHOAN WHERE USRNAME = @USRNAME AND PASSWRD = @PASSWRD)
+	SET NOCOUNT OFF;
+	RETURN @Acc_Type
+END
 
 

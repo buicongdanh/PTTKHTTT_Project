@@ -48,7 +48,7 @@ namespace PTTKHTTT_Project
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(456, 284);
+            this.dataGridView1.Size = new System.Drawing.Size(900, 105);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -63,17 +63,17 @@ namespace PTTKHTTT_Project
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(547, 117);
+            this.dataGridView2.Location = new System.Drawing.Point(31, 292);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(381, 284);
+            this.dataGridView2.Size = new System.Drawing.Size(897, 128);
             this.dataGridView2.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(544, 79);
+            this.label2.Location = new System.Drawing.Point(28, 251);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 17);
             this.label2.TabIndex = 1;
@@ -81,7 +81,7 @@ namespace PTTKHTTT_Project
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(813, 69);
+            this.button1.Location = new System.Drawing.Point(813, 235);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 33);
             this.button1.TabIndex = 3;
@@ -132,6 +132,7 @@ namespace PTTKHTTT_Project
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChonVaccine_Le";
             this.Text = "ChonVaccine_Nhom";
+            this.Load += new System.EventHandler(this.ChonVaccine_Le_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);

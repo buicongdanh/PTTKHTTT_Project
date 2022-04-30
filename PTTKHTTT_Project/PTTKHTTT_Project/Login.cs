@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace PTTKHTTT_Project
 {
@@ -46,6 +47,103 @@ namespace PTTKHTTT_Project
                 textBox1.ForeColor = Color.Gray;
             }
             textBox1.TextAlign = HorizontalAlignment.Center;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string username = textBox1.Text.Trim();
+            string password = textBox2.Text.Trim();
+
+            if (username == "" || password == "")
+            {
+                MessageBox.Show("!");
+            }
+            else
+            {
+                string conString = "Data Source=FINN\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
+                SqlConnection con = new SqlConnection(conString);
+                con.Open();
+                try
+                {
+                    string sql = "USP_Login";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter()
+                    {
+                        Direction = ParameterDirection.Input,
+                        ParameterName = "@USRNAME",
+                        SqlDbType = SqlDbType.Char,
+                        Value = username
+                    });
+                    cmd.Parameters.Add(new SqlParameter()
+                    {
+                        Direction = ParameterDirection.Input,
+                        ParameterName = "@PASSWRD",
+                        SqlDbType = SqlDbType.Char,
+                        Value = password
+                    });
+                    cmd.Parameters.Add(new SqlParameter()
+                    {
+                        Direction = ParameterDirection.Output,
+                        ParameterName = "@ACC_TYPE",
+                        SqlDbType = SqlDbType.Int,
+                    });
+
+                    cmd.ExecuteNonQuery();
+
+                    int acc_type = (int)cmd.Parameters["@ACC_TYPE"].Value;
+
+                    switch (acc_type)
+                    {
+                        case 1:
+                            {
+                                MessageBox.Show("Khách hàng đăng nhập thành công");
+                                this.Hide();
+                                var form_KH = new Menu_KH();
+                                form_KH.Closed += (s, args) => this.Close();
+                                form_KH.Show();
+                                break;
+                            }
+                        case 2:
+                            {
+                                MessageBox.Show("Nhân viên đăng nhập thành công");
+                                this.Hide();
+                                var form_KH = new Menu_NV();
+                                form_KH.Closed += (s, args) => this.Close();
+                                form_KH.Show();
+                                break;
+                            }
+                        case 3:
+                            {
+                                MessageBox.Show("Quản lý đăng nhập thành công");
+                                this.Hide();
+                                var form_KH = new Menu_QL();
+                                form_KH.Closed += (s, args) => this.Close();
+                                form_KH.Show();
+                                break;
+                            }
+                        case -1:
+                            {
+                                MessageBox.Show("Không hợp lệ, vui lòng nhập lại");
+                                break;
+                            }
+                        default:
+                            {
+
+                                break;
+                            }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                    con.Close();
+                }                
+            }
         }
     }
 }
