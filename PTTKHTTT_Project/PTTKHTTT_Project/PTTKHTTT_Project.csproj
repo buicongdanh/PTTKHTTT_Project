@@ -70,6 +70,12 @@
     <Compile Include="DatMuaVaccine.Designer.cs">
       <DependentUpon>DatMuaVaccine.cs</DependentUpon>
     </Compile>
+    <Compile Include="KH_ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KH_ThanhToan.Designer.cs">
+      <DependentUpon>KH_ThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="LapHoaDonThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatMuaVaccine.resx">
       <DependentUpon>DatMuaVaccine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KH_ThanhToan.resx">
+      <DependentUpon>KH_ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LapHoaDonThanhToan.resx">
       <DependentUpon>LapHoaDonThanhToan.cs</DependentUpon>

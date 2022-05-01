@@ -57,3 +57,4 @@ C:\Users\Admin\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\o
 C:\Users\Admin\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.exe
 C:\Users\Admin\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.pdb
 C:\Users\Admin\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.NV_ThanhToan.resources
+C:\Users\Admin\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.KH_ThanhToan.resources
