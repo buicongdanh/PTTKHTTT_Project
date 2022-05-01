@@ -351,3 +351,9 @@ MigrationBackup/
 *.cache
 PTTKHTTT_Project/PTTKHTTT_Project/obj/Debug/PTTKHTTT_Project.exe
 PTTKHTTT_Project/PTTKHTTT_Project/bin/Debug/PTTKHTTT_Project.pdb
+PTTKHTTT_Project/PTTKHTTT_Project/bin/Debug/PTTKHTTT_Project.exe
+PTTKHTTT_Project/PTTKHTTT_Project/bin/Debug/PTTKHTTT_Project.exe
+PTTKHTTT_Project/PTTKHTTT_Project/bin/Debug/PTTKHTTT_Project.pdb
+*.exe
+*.pdb
+*.cache
