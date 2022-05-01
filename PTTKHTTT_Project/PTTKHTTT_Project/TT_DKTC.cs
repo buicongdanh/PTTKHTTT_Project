@@ -39,7 +39,7 @@ namespace PTTKHTTT_Project
                 {
                     dataGridView1.DataSource = ds.Tables[0];
 
-                    dataGridView1.Columns[0].ReadOnly = true;
+                    /*dataGridView1.Columns[0].ReadOnly = true;
                     dataGridView1.Columns[1].ReadOnly = true;
                     dataGridView1.Columns[2].ReadOnly = true;
                     dataGridView1.Columns[3].ReadOnly = true;
@@ -47,7 +47,12 @@ namespace PTTKHTTT_Project
                     dataGridView1.Columns[6].ReadOnly = true;
                     dataGridView1.Columns[7].ReadOnly = true;
                     dataGridView1.Columns[8].ReadOnly = true;
-                    dataGridView1.Columns[9].ReadOnly = true;
+                    dataGridView1.Columns[9].ReadOnly = true;*/
+
+                    foreach (DataGridViewColumn dgvCol in dataGridView1.Columns)
+                    {
+                        dgvCol.ReadOnly = true;
+                    }
                 }
             }
             catch(Exception ex)

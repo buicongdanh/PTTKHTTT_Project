@@ -52,6 +52,7 @@ namespace PTTKHTTT_Project
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TT_DKTiemChung";
             this.Text = "TT_DKTiemChung";
+            this.Load += new System.EventHandler(this.TT_DKTiemChung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

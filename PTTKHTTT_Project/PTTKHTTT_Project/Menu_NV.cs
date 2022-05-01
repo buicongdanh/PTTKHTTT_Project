@@ -13,8 +13,8 @@ namespace PTTKHTTT_Project
 {
     public partial class Menu_NV : Form
     {
-        public static string conString = "Data Source=DESKTOP-2F5L5LM\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
-        //public static string conString = "Data Source=FINN\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
+        //public static string conString = "Data Source=DESKTOP-2F5L5LM\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
+        public static string conString = "Data Source=FINN\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
         public static SqlConnection con = new SqlConnection(conString);
         public string MaNV;
         public Menu_NV(string username)
