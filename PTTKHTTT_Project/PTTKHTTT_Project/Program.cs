@@ -16,7 +16,7 @@ namespace PTTKHTTT_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu_QL());
+            Application.Run(new Menu_NV("nhanvien"));
         }
     }
 }

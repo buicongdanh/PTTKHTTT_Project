@@ -423,3 +423,6 @@ BEGIN
 	SET NOCOUNT OFF;
 	RETURN @Acc_Type
 END
+
+select * from HOADON where MAHD="HD000001";
+select * from DONMUAVC;

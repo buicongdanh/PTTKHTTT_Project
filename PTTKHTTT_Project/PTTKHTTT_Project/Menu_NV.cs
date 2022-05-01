@@ -13,8 +13,8 @@ namespace PTTKHTTT_Project
 {
     public partial class Menu_NV : Form
     {
-        //public static string conString = "Data Source=DESKTOP-2F5L5LM\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
-        public static string conString = "Data Source=FINN\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
+        public static string conString = "Data Source=DESKTOP-2F5L5LM\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
+        //public static string conString = "Data Source=FINN\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
         public static SqlConnection con = new SqlConnection(conString);
         public string MaNV;
         public Menu_NV(string username)
@@ -102,6 +102,8 @@ namespace PTTKHTTT_Project
             res_btn();
             button2.TextAlign = ContentAlignment.MiddleRight;
             button2.BackColor = System.Drawing.ColorTranslator.FromHtml("#47cacc");
+            Form LapHoaDonThanhToan = new LapHoaDonThanhToan();
+            openChildForm(LapHoaDonThanhToan);
         }
         //Button_Exit
         /*private void button5_Click(object sender, EventArgs e)
