@@ -424,5 +424,10 @@ BEGIN
 	RETURN @Acc_Type
 END
 
-select * from HOADON where MAHD="HD000001";
+select * from PHIEUDKTIEM;
+select * from HOADON where MAHD='HD000001';
 select * from DONMUAVC;
+
+select * from HOSOTIEMCHUNG;
+
+Update PHIEUDKTIEM set NGAYTIEM=CONVERT(datetime,'7/19/2020 12:00:00 AM') where MAPDKTIEM='DK000001';

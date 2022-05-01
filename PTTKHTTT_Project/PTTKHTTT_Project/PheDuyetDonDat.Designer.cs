@@ -38,18 +38,20 @@ namespace PTTKHTTT_Project
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 59);
+            this.dataGridView1.Location = new System.Drawing.Point(34, 48);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(869, 506);
+            this.dataGridView1.Size = new System.Drawing.Size(652, 411);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(810, 628);
+            this.button1.Location = new System.Drawing.Point(608, 510);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 41);
+            this.button1.Size = new System.Drawing.Size(79, 33);
             this.button1.TabIndex = 1;
             this.button1.Text = "Phê duyệt";
             this.button1.UseVisualStyleBackColor = true;
@@ -57,22 +59,24 @@ namespace PTTKHTTT_Project
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(587, 628);
+            this.button2.Location = new System.Drawing.Point(440, 510);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 41);
+            this.button2.Size = new System.Drawing.Size(96, 33);
             this.button2.TabIndex = 1;
             this.button2.Text = "Không phê duyệt";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // PheDuyetDonDat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 717);
+            this.ClientSize = new System.Drawing.Size(720, 583);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PheDuyetDonDat";
             this.Text = "PheDuyetDonDat";
             this.Load += new System.EventHandler(this.PheDuyetDonDat_Load);
