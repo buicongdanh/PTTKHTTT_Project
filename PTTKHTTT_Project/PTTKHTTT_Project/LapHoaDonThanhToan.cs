@@ -69,7 +69,7 @@ namespace PTTKHTTT_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Tim kiem danh sach don");
+                MessageBox.Show("Error Tim kiem danh sach don mua VC");
             }
         }
     }

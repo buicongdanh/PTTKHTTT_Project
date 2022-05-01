@@ -100,6 +100,12 @@
     <Compile Include="Menu_QL.Designer.cs">
       <DependentUpon>Menu_QL.cs</DependentUpon>
     </Compile>
+    <Compile Include="NV_ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NV_ThanhToan.Designer.cs">
+      <DependentUpon>NV_ThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="PheDuyetDonDat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_QL.resx">
       <DependentUpon>Menu_QL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NV_ThanhToan.resx">
+      <DependentUpon>NV_ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PheDuyetDonDat.resx">
       <DependentUpon>PheDuyetDonDat.cs</DependentUpon>

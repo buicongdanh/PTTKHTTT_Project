@@ -95,6 +95,8 @@ namespace PTTKHTTT_Project
             res_btn();
             button1.TextAlign = ContentAlignment.MiddleRight;
             button1.BackColor = System.Drawing.ColorTranslator.FromHtml("#47cacc");
+            Form NV_ThanhToan = new NV_ThanhToan();
+            openChildForm(NV_ThanhToan);
         }
 
         private void button2_Click_1(object sender, EventArgs e)
