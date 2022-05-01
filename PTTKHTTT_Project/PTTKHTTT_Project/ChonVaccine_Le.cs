@@ -20,6 +20,13 @@ namespace PTTKHTTT_Project
 
         private void ChonVaccine_Le_Load(object sender, EventArgs e)
         {
+            DataGridViewButtonColumn col1 = new DataGridViewButtonColumn();
+
+            dataGridView2.ColumnCount = 3;
+            dataGridView2.Columns[0].Name = "MaVC";
+            dataGridView2.Columns[1].Name = "TenVC";
+            dataGridView2.Columns[2].Name = "SoLuong";
+
             String q = "select * from vaccine";
 
             try
@@ -52,7 +59,28 @@ namespace PTTKHTTT_Project
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                MessageBox.Show("Chọn vaccine " + dataGridView1.Rows[e.RowIndex].Cells["Mavc"].Value.ToString());
+                if (textBox1.Text == "" || int.Parse(textBox1.Text) <= 0)
+                {
+                    MessageBox.Show("Vui lòng nhập số lượng Vaccine");
+
+                }
+                else
+                {
+                    try
+                    {
+                        DataGridViewRow dgvR = dataGridView1.Rows[e.RowIndex];
+                        dataGridView2.Rows.Add(dgvR.Cells[1].Value, dgvR.Cells[2].Value, textBox1.Text);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        textBox1.Text = "";
+                    }
+                } 
             }
         }
     }

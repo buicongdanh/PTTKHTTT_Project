@@ -20,6 +20,17 @@ namespace PTTKHTTT_Project
 
         private void ChonVaccine_Nhom_Load(object sender, EventArgs e)
         {
+            DataGridViewButtonColumn col1 = new DataGridViewButtonColumn();
+
+            dataGridView3.ColumnCount = 2;
+            dataGridView3.Columns[0].Name = "MaGoi";
+            dataGridView3.Columns[1].Name = "TenGoi";
+            
+            col1.UseColumnTextForButtonValue = true;
+            col1.Text = "HUy";
+            col1.Name = "";
+
+            dataGridView3.Columns.Add(col1);
             String q = "select * from goivc";
 
             try
@@ -31,18 +42,16 @@ namespace PTTKHTTT_Project
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     dataGridView1.DataSource = ds.Tables[0];
-
-
-                    DataGridViewButtonColumn col = new DataGridViewButtonColumn();
-                    col.UseColumnTextForButtonValue = true;
-                    col.Text = "Chọn";
-                    col.Name = "";
-                    dataGridView1.Columns.Add(col);
+                    DataGridViewButtonColumn col2 = new DataGridViewButtonColumn();
+                    col2.UseColumnTextForButtonValue = true;
+                    col2.Text = "Chọn";
+                    col2.Name = "";
+                    dataGridView1.Columns.Add(col2);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error TT_DKTC");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -59,7 +68,19 @@ namespace PTTKHTTT_Project
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                    MessageBox.Show("Chọn vaccine " + dataGridView1.Rows[e.RowIndex].Cells["magoi"].Value.ToString());
+
+                try
+                {
+                    DataGridViewRow dgvR = dataGridView1.Rows[e.RowIndex];
+                    dataGridView3.Rows.Add(dgvR.Cells[1].Value, dgvR.Cells[2].Value, dgvR.Cells[0].Value);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                MessageBox.Show("Chọn vaccine " + dataGridView1.Rows[e.RowIndex].Cells["magoi"].Value.ToString());
             }
 
             else
