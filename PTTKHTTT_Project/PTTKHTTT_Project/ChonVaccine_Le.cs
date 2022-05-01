@@ -41,7 +41,18 @@ namespace PTTKHTTT_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error TT_DKTC");
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                MessageBox.Show("Chọn vaccine " + dataGridView1.Rows[e.RowIndex].Cells["Mavc"].Value.ToString());
             }
         }
     }
