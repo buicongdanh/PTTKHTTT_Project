@@ -39,7 +39,7 @@ namespace PTTKHTTT_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Tim kiem danh sach HOADON");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -64,8 +64,29 @@ namespace PTTKHTTT_Project
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error Thanh Toan Hoa Don");
+                    MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void NV_ThanhToan_Load(object sender, EventArgs e)
+        {
+            String q = "select * from HOADON";
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(q, Menu_NV.con);
+                DataSet ds = new DataSet();
+                adp.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

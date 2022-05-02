@@ -11,17 +11,16 @@ using System.Data.SqlClient;
 
 namespace PTTKHTTT_Project
 {
-    public partial class PheDuyetDonDat : Form
+    public partial class NV_LapDonDatVC : Form
     {
-        public PheDuyetDonDat()
+        public NV_LapDonDatVC()
         {
             InitializeComponent();
         }
 
-        private void PheDuyetDonDat_Load(object sender, EventArgs e)
+        private void NV_LapDonDatVC_Load(object sender, EventArgs e)
         {
-            String q = "select * from DSDATVACCINE";
-
+            string q = "select * from DSDATVACCINE where Duyet = 1;";
             try
             {
                 SqlDataAdapter adp = new SqlDataAdapter(q, Menu_NV.con);
@@ -38,11 +37,5 @@ namespace PTTKHTTT_Project
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

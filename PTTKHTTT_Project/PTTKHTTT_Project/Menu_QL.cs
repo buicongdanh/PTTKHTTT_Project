@@ -19,7 +19,7 @@ namespace PTTKHTTT_Project
         {
             con.Open();
             InitializeComponent();
-            panel_Menu.BackColor = System.Drawing.ColorTranslator.FromHtml("#205072");
+            panel_Menu.BackColor = System.Drawing.ColorTranslator.FromHtml("#226f78");
             panel_Heading.BackColor = System.Drawing.ColorTranslator.FromHtml("#2c6975");
             //panel_Childform.BackColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
 

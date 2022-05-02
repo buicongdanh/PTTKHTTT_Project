@@ -38,26 +38,15 @@ namespace PTTKHTTT_Project
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     dataGridView1.DataSource = ds.Tables[0];
-
-                    /*dataGridView1.Columns[0].ReadOnly = true;
-                    dataGridView1.Columns[1].ReadOnly = true;
-                    dataGridView1.Columns[2].ReadOnly = true;
-                    dataGridView1.Columns[3].ReadOnly = true;
-                    dataGridView1.Columns[5].ReadOnly = true;
-                    dataGridView1.Columns[6].ReadOnly = true;
-                    dataGridView1.Columns[7].ReadOnly = true;
-                    dataGridView1.Columns[8].ReadOnly = true;
-                    dataGridView1.Columns[9].ReadOnly = true;*/
-
-                    foreach (DataGridViewColumn dgvCol in dataGridView1.Columns)
-                    {
-                        dgvCol.ReadOnly = true;
-                    }
+                }
+                foreach (DataGridViewColumn dgvCol in dataGridView1.Columns)
+                {
+                    dgvCol.ReadOnly = true;
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Error TT_DKTC");
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -91,9 +80,39 @@ namespace PTTKHTTT_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cap nhat khong thanh cong");
+                MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void TT_DKTC_Load(object sender, EventArgs e)
+        {
+            String q = "select * from PHIEUDKTIEM";
+            if (textBox1.Text.Trim().Length > 0)
+            {
+                q = q + " WHERE MAPDKTIEM ='" + textBox1.Text + "'";
+            }
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(q, Menu_NV.con);
+                DataSet ds = new DataSet();
+                adp.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = ds.Tables[0];
+                }
+
+                foreach (DataGridViewColumn dgvCol in dataGridView1.Columns)
+                {
+                    dgvCol.ReadOnly = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

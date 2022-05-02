@@ -48,6 +48,11 @@ namespace PTTKHTTT_Project
                     col2.Name = "";
                     dataGridView1.Columns.Add(col2);
                 }
+
+                foreach (DataGridViewColumn dgvCol in dataGridView1.Columns)
+                {
+                    dgvCol.ReadOnly = true;
+                }
             }
             catch (Exception ex)
             {
@@ -101,7 +106,7 @@ namespace PTTKHTTT_Project
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error");
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

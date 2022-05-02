@@ -1,7 +1,7 @@
 ﻿
 namespace PTTKHTTT_Project
 {
-    partial class TT_DKTiemChung
+    partial class TT_DSVC_Dat
     {
         /// <summary>
         /// Required designer variable.
@@ -36,23 +36,23 @@ namespace PTTKHTTT_Project
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 69);
+            this.dataGridView1.Location = new System.Drawing.Point(65, 102);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(954, 590);
+            this.dataGridView1.Size = new System.Drawing.Size(931, 598);
             this.dataGridView1.TabIndex = 0;
             // 
-            // TT_DKTiemChung
+            // TT_DSVC_Dat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 945);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "TT_DKTiemChung";
-            this.Text = "TT_DKTiemChung";
-            this.Load += new System.EventHandler(this.TT_DKTiemChung_Load);
+            this.Name = "TT_DSVC_Dat";
+            this.Text = "TT_DSVC_Dat";
+            this.Load += new System.EventHandler(this.TT_DSVC_Dat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

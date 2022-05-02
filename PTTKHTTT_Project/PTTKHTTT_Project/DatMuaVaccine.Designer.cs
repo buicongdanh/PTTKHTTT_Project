@@ -41,6 +41,7 @@ namespace PTTKHTTT_Project
             this.panel_Childform = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBox5
@@ -118,10 +119,9 @@ namespace PTTKHTTT_Project
             // 
             // panel_Childform
             // 
-            this.panel_Childform.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_Childform.Location = new System.Drawing.Point(0, 264);
+            this.panel_Childform.Location = new System.Drawing.Point(0, 302);
             this.panel_Childform.Name = "panel_Childform";
-            this.panel_Childform.Size = new System.Drawing.Size(960, 453);
+            this.panel_Childform.Size = new System.Drawing.Size(1080, 640);
             this.panel_Childform.TabIndex = 18;
             // 
             // label3
@@ -142,11 +142,24 @@ namespace PTTKHTTT_Project
             this.button1.Text = "Đặt mua";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Mua lẻ",
+            "Mua theo gói"});
+            this.comboBox1.Location = new System.Drawing.Point(176, 224);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(282, 24);
+            this.comboBox1.TabIndex = 22;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // DatMuaVaccine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 717);
+            this.ClientSize = new System.Drawing.Size(1080, 945);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel_Childform);
@@ -181,5 +194,6 @@ namespace PTTKHTTT_Project
         private System.Windows.Forms.Panel panel_Childform;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

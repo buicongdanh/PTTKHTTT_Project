@@ -47,17 +47,17 @@ namespace PTTKHTTT_Project
             this.panel_Heading.Location = new System.Drawing.Point(0, 0);
             this.panel_Heading.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Heading.Name = "panel_Heading";
-            this.panel_Heading.Size = new System.Drawing.Size(1280, 83);
+            this.panel_Heading.Size = new System.Drawing.Size(1400, 55);
             this.panel_Heading.TabIndex = 1;
             // 
             // panel_Childform
             // 
             this.panel_Childform.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel_Childform.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel_Childform.Location = new System.Drawing.Point(320, 83);
+            this.panel_Childform.Location = new System.Drawing.Point(320, 55);
             this.panel_Childform.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Childform.Name = "panel_Childform";
-            this.panel_Childform.Size = new System.Drawing.Size(960, 717);
+            this.panel_Childform.Size = new System.Drawing.Size(1080, 945);
             this.panel_Childform.TabIndex = 2;
             // 
             // button3
@@ -83,7 +83,7 @@ namespace PTTKHTTT_Project
             this.button_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Exit.ForeColor = System.Drawing.Color.White;
-            this.button_Exit.Location = new System.Drawing.Point(0, 639);
+            this.button_Exit.Location = new System.Drawing.Point(0, 867);
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(320, 78);
             this.button_Exit.TabIndex = 0;
@@ -165,17 +165,17 @@ namespace PTTKHTTT_Project
             this.panel_Menu.Controls.Add(this.button3);
             this.panel_Menu.Controls.Add(this.button4);
             this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_Menu.Location = new System.Drawing.Point(0, 83);
+            this.panel_Menu.Location = new System.Drawing.Point(0, 55);
             this.panel_Menu.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(320, 717);
+            this.panel_Menu.Size = new System.Drawing.Size(320, 945);
             this.panel_Menu.TabIndex = 0;
             // 
             // Menu_KH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 800);
+            this.ClientSize = new System.Drawing.Size(1400, 1000);
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.panel_Childform);
             this.Controls.Add(this.panel_Heading);

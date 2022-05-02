@@ -1,7 +1,7 @@
 ﻿
 namespace PTTKHTTT_Project
 {
-    partial class TT_DKTiemChung
+    partial class NV_LapDonDatVC
     {
         /// <summary>
         /// Required designer variable.
@@ -36,23 +36,23 @@ namespace PTTKHTTT_Project
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 69);
+            this.dataGridView1.Location = new System.Drawing.Point(213, 233);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(954, 590);
+            this.dataGridView1.Size = new System.Drawing.Size(579, 521);
             this.dataGridView1.TabIndex = 0;
             // 
-            // TT_DKTiemChung
+            // NV_LapDonDatVC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 945);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "TT_DKTiemChung";
-            this.Text = "TT_DKTiemChung";
-            this.Load += new System.EventHandler(this.TT_DKTiemChung_Load);
+            this.Name = "NV_LapDonDatVC";
+            this.Text = "NV_LapDonDatVC";
+            this.Load += new System.EventHandler(this.NV_LapDonDatVC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

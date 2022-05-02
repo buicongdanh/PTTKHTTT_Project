@@ -31,13 +31,14 @@ namespace PTTKHTTT_Project
         {
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel_NGH = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_ = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox_Ten = new System.Windows.Forms.TextBox();
-            this.textBox_ = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel_ChonVC = new System.Windows.Forms.Panel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,11 +51,9 @@ namespace PTTKHTTT_Project
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox_Date = new System.Windows.Forms.TextBox();
             this.panel_NGH.SuspendLayout();
-            this.panel_ChonVC.SuspendLayout();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -82,23 +81,19 @@ namespace PTTKHTTT_Project
             this.panel_NGH.TabIndex = 3;
             this.panel_NGH.Visible = false;
             // 
-            // label3
+            // textBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Tên";
+            this.textBox1.Location = new System.Drawing.Point(238, 72);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(196, 22);
+            this.textBox1.TabIndex = 4;
             // 
-            // label4
+            // textBox_
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "SĐT";
+            this.textBox_.Location = new System.Drawing.Point(238, 42);
+            this.textBox_.Name = "textBox_";
+            this.textBox_.Size = new System.Drawing.Size(196, 22);
+            this.textBox_.TabIndex = 4;
             // 
             // label5
             // 
@@ -116,28 +111,38 @@ namespace PTTKHTTT_Project
             this.textBox_Ten.Size = new System.Drawing.Size(196, 22);
             this.textBox_Ten.TabIndex = 4;
             // 
-            // textBox_
+            // label4
             // 
-            this.textBox_.Location = new System.Drawing.Point(238, 42);
-            this.textBox_.Name = "textBox_";
-            this.textBox_.Size = new System.Drawing.Size(196, 22);
-            this.textBox_.TabIndex = 4;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(28, 45);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "SĐT";
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.Location = new System.Drawing.Point(238, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 22);
-            this.textBox1.TabIndex = 4;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(28, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Tên";
             // 
             // panel_ChonVC
             // 
-            this.panel_ChonVC.Controls.Add(this.monthCalendar1);
-            this.panel_ChonVC.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_ChonVC.Location = new System.Drawing.Point(0, 264);
+            this.panel_ChonVC.Location = new System.Drawing.Point(0, 310);
             this.panel_ChonVC.Name = "panel_ChonVC";
-            this.panel_ChonVC.Size = new System.Drawing.Size(960, 453);
+            this.panel_ChonVC.Size = new System.Drawing.Size(1080, 640);
             this.panel_ChonVC.TabIndex = 4;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(108, 268);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 10;
+            this.monthCalendar1.Visible = false;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // label1
             // 
@@ -235,21 +240,13 @@ namespace PTTKHTTT_Project
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(820, 221);
+            this.button1.Location = new System.Drawing.Point(825, 221);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 33);
             this.button1.TabIndex = 9;
             this.button1.Text = "Đăng ký";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(160, 9);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 10;
-            this.monthCalendar1.Visible = false;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // label10
             // 
@@ -273,7 +270,8 @@ namespace PTTKHTTT_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 717);
+            this.ClientSize = new System.Drawing.Size(1080, 945);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label9);
@@ -297,7 +295,6 @@ namespace PTTKHTTT_Project
             this.Load += new System.EventHandler(this.DangKyTiemChung_Load);
             this.panel_NGH.ResumeLayout(false);
             this.panel_NGH.PerformLayout();
-            this.panel_ChonVC.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

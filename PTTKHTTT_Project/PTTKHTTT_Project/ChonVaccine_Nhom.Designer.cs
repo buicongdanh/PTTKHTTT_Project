@@ -66,7 +66,7 @@ namespace PTTKHTTT_Project
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 179);
+            this.label2.Location = new System.Drawing.Point(31, 224);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 17);
             this.label2.TabIndex = 0;
@@ -75,17 +75,17 @@ namespace PTTKHTTT_Project
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(26, 199);
+            this.dataGridView2.Location = new System.Drawing.Point(26, 244);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(896, 215);
+            this.dataGridView2.Size = new System.Drawing.Size(668, 253);
             this.dataGridView2.TabIndex = 1;
             // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(599, 52);
+            this.dataGridView3.Location = new System.Drawing.Point(691, 52);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 24;
@@ -95,7 +95,7 @@ namespace PTTKHTTT_Project
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(596, 18);
+            this.label3.Location = new System.Drawing.Point(688, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 17);
             this.label3.TabIndex = 0;
@@ -105,7 +105,7 @@ namespace PTTKHTTT_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 453);
+            this.ClientSize = new System.Drawing.Size(1080, 640);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);

@@ -58,3 +58,6 @@ C:\Users\Admin\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\o
 C:\Users\Admin\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.pdb
 C:\Users\Admin\source\repos\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.NV_ThanhToan.resources
 C:\Users\ACER\Desktop\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.NV_ThanhToan.resources
+C:\Users\ACER\Desktop\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.KH_ThanhToan.resources
+C:\Users\ACER\Desktop\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.TT_DSVC_Dat.resources
+C:\Users\ACER\Desktop\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.NV_LapDonDatVC.resources

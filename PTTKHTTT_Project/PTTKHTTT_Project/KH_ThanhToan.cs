@@ -36,7 +36,7 @@ namespace PTTKHTTT_Project
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error Thanh Toan Hoa Don");
+                    MessageBox.Show(ex.Message);
                 }
 
                 dataGridView1.DataSource = null;
@@ -48,8 +48,15 @@ namespace PTTKHTTT_Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            String q = "SELECT HD.MAHD,DM.MADON,DM.MAKH,DM.NGAYDATMUA,DM.TONGTIEN, HD.tinhtrang FROM HOADON HD JOIN DONMUAVC DM ON HD.madon = DM.MADON";     
-            q = q + " WHERE MAKH ='" + Menu_KH.MaKH + "'";
+            
+        }
+
+        private void KH_ThanhToan_Load(object sender, EventArgs e)
+        {
+            //String q = "SELECT HD.MAHD,DM.MADON,DM.MAKH,DM.NGAYDATMUA,DM.TONGTIEN, HD.tinhtrang, HD.DoTT FROM HOADON HD JOIN DONMUAVC DM ON HD.madon = DM.MADON";
+            string q = "SELECT HD.* " +
+                "FROM HOADON HD JOIN DONMUAVC DMVC ON (HD.MADON = DMVC.MADON) " +
+                "WHERE MAKH ='" + Menu_KH.MaKH + "'";
 
             if (textBox1.Text.Trim().Length > 0)
             {
@@ -68,7 +75,31 @@ namespace PTTKHTTT_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Tim kiem danh sach DONMUA");
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string MaDon = dataGridView1.Rows[e.RowIndex].Cells["madon"].Value.ToString();
+            String q = "select vaccine.tenvaccine, ct_dmvc.soluong, ct_dmvc.gia " +
+                "from ct_dmvc, vaccine " +
+                "where madon = '" + MaDon + "' and vaccine.mavc = ct_dmvc.mavc";
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(q, Menu_KH.con);
+                DataSet ds = new DataSet();
+                adp.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    dataGridView2.DataSource = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

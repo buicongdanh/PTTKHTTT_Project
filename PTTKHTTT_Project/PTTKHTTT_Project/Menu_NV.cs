@@ -21,7 +21,7 @@ namespace PTTKHTTT_Project
         {
             MaNV = username;
             InitializeComponent();
-            panel_Menu.BackColor = System.Drawing.ColorTranslator.FromHtml("#205072");
+            panel_Menu.BackColor = System.Drawing.ColorTranslator.FromHtml("#226f78");
             panel_Heading.BackColor = System.Drawing.ColorTranslator.FromHtml("#2c6975");
             //panel_Childform.BackColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
             button1.BackColor = System.Drawing.ColorTranslator.FromHtml("#329d9c");
@@ -88,6 +88,8 @@ namespace PTTKHTTT_Project
             res_btn();
             button5.TextAlign = ContentAlignment.MiddleRight;
             button5.BackColor = System.Drawing.ColorTranslator.FromHtml("#47cacc");
+            Form NV_LapDonDatVC = new NV_LapDonDatVC();
+            openChildForm(NV_LapDonDatVC);
         }
 
         private void button1_Click(object sender, EventArgs e)

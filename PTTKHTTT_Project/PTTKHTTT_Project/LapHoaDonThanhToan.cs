@@ -19,7 +19,23 @@ namespace PTTKHTTT_Project
 
         private void LapHoaDonThanhToan_Load(object sender, EventArgs e)
         {
+            String q = "select * from DONMUAVC";
 
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(q, Menu_NV.con);
+                DataSet ds = new DataSet();
+                adp.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,7 +56,7 @@ namespace PTTKHTTT_Project
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Error Create Hoa Don");
+                    MessageBox.Show(ex.Message);
                 }
                 
 
@@ -69,7 +85,7 @@ namespace PTTKHTTT_Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error Tim kiem danh sach don mua VC");
+                MessageBox.Show(ex.Message);
             }
         }
     }
