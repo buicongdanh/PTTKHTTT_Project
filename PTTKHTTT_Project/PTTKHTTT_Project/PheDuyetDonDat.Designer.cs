@@ -45,10 +45,11 @@ namespace PTTKHTTT_Project
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(869, 506);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(811, 628);
+            this.button1.Location = new System.Drawing.Point(811, 598);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 41);
@@ -59,13 +60,14 @@ namespace PTTKHTTT_Project
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(587, 628);
+            this.button2.Location = new System.Drawing.Point(584, 598);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 41);
             this.button2.TabIndex = 1;
             this.button2.Text = "Không phê duyệt";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // PheDuyetDonDat
             // 

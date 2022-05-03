@@ -72,5 +72,39 @@ namespace PTTKHTTT_Project
             panel_Childform.Tag = childForm;
             childForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*
+            if(comboBox1.Text == "Mua nhóm")
+            {
+                MessageBox.Show("TB");
+                DataGridView dgv_nhom = ChonVaccine_Nhom.dgvPublic;
+                for (int rows = 0; rows < dgv_nhom.Rows.Count - 1; rows++)
+                {
+                    for (int col = 0; col < dgv_nhom.Rows[rows].Cells.Count; col++)
+                    {
+                        MessageBox.Show(dgv_nhom.Rows[rows].Cells[col].Value.ToString());
+                    }
+                }
+            }   
+
+            if(comboBox1.Text == "Mua lẻ")
+            {
+                DataGridView dgv_nhom = ChonVaccine_Le.dgvPublic;
+                for (int rows = 0; rows < dgv_nhom.Rows.Count - 1; rows++)
+                {
+                    for (int col = 0; col < dgv_nhom.Rows[rows].Cells.Count; col++)
+                    {
+                        MessageBox.Show(dgv_nhom.Rows[rows].Cells[col].Value.ToString());
+
+                    }
+                }
+            }
+            */
+
+            //to-do
+            //Xu ly dat mua
+        }
     }
 }

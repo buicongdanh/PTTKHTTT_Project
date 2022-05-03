@@ -37,5 +37,56 @@ namespace PTTKHTTT_Project
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string query = "INSERT INTO DONMUAVC VALUES" +
+                "(@MADON, @MAKH, @NGAYDATMUA, @TONGTIEN)";
+
+            using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
+            {
+                //Them PHIEUDK
+                command.Parameters.AddWithValue("@MADON", textBox2.Text);
+                command.Parameters.AddWithValue("@MAKH", textBox2.Text);
+                command.Parameters.AddWithValue("@NGAYDATMUA", textBox3.Text);
+                command.Parameters.AddWithValue("@TONGTIEN", textBox4.Text);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Lap Hoa Don Thanh Cong");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            //foreach
+            {
+                query = "";
+                query = "INSERT INTO CT_DMVC VALUES (@MADON, @MAVC, @SOLUONG, @GIA";
+                using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
+                {
+                    command.Parameters.AddWithValue("@MADON", textBox2.Text);
+                    command.Parameters.AddWithValue("@MAVC", textBox2.Text);
+                    command.Parameters.AddWithValue("@SOLUONG", textBox3.Text);
+                    command.Parameters.AddWithValue("@GIA", textBox3.Text);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Lap Hoa Don Thanh Cong");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+
+            //update du lieu [SLT] trong [Vaccine]
+            //su dung sp USP_Vaccine_Add
+        }
     }
 }

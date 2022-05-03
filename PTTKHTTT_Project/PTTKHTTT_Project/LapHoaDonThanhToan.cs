@@ -58,9 +58,6 @@ namespace PTTKHTTT_Project
                 {
                     MessageBox.Show(ex.Message);
                 }
-                
-
-
             }
         }
 

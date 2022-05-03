@@ -59,7 +59,7 @@ namespace PTTKHTTT_Project
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(494, 65);
+            this.checkBox1.Location = new System.Drawing.Point(548, 77);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(175, 21);
             this.checkBox1.TabIndex = 2;
@@ -75,7 +75,7 @@ namespace PTTKHTTT_Project
             this.panel_NGH.Controls.Add(this.textBox_Ten);
             this.panel_NGH.Controls.Add(this.label4);
             this.panel_NGH.Controls.Add(this.label3);
-            this.panel_NGH.Location = new System.Drawing.Point(494, 92);
+            this.panel_NGH.Location = new System.Drawing.Point(548, 104);
             this.panel_NGH.Name = "panel_NGH";
             this.panel_NGH.Size = new System.Drawing.Size(459, 106);
             this.panel_NGH.TabIndex = 3;
@@ -138,7 +138,7 @@ namespace PTTKHTTT_Project
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(108, 268);
+            this.monthCalendar1.Location = new System.Drawing.Point(169, 266);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 10;
             this.monthCalendar1.Visible = false;
@@ -220,7 +220,7 @@ namespace PTTKHTTT_Project
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(481, 229);
+            this.label9.Location = new System.Drawing.Point(535, 241);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(98, 17);
             this.label9.TabIndex = 7;
@@ -232,7 +232,7 @@ namespace PTTKHTTT_Project
             this.comboBox1.Items.AddRange(new object[] {
             "Tiêm theo gói",
             "Tiêm lẻ"});
-            this.comboBox1.Location = new System.Drawing.Point(600, 226);
+            this.comboBox1.Location = new System.Drawing.Point(654, 238);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(204, 24);
             this.comboBox1.TabIndex = 8;
@@ -240,7 +240,7 @@ namespace PTTKHTTT_Project
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(825, 221);
+            this.button1.Location = new System.Drawing.Point(879, 233);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 33);
             this.button1.TabIndex = 9;

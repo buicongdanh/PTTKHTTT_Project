@@ -99,7 +99,149 @@ namespace PTTKHTTT_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Execute SQL Proc
+            //PHIEUDK
+            String query = "INSERT INTO PHIEUDKTIEM VALUES" +
+                "(@MAPDKTIEM, @MAKH, @DIACHI, @GIOITINH, @NGAYTIEM, " +
+                "@HOTEN, @SDT, @HOTEN_NGH, @SDT_NGH, @MQH)";
+
+            using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
+            {
+                command.Parameters.AddWithValue("@MAPDKTIEM", textBox2.Text);
+                command.Parameters.AddWithValue("@MAKH", textBox2.Text);
+                command.Parameters.AddWithValue("@DIACHI", textBox3.Text);
+                command.Parameters.AddWithValue("@GIOITINH", textBox4.Text);
+                command.Parameters.AddWithValue("@NGAYTIEM", textBox5.Text);
+                command.Parameters.AddWithValue("@HOTEN", textBox5.Text);
+                command.Parameters.AddWithValue("@SDT", textBox2.Text);
+                command.Parameters.AddWithValue("@HOTEN_NGH", textBox2.Text);
+                command.Parameters.AddWithValue("@SDT_NGH", textBox3.Text);
+                command.Parameters.AddWithValue("@MQH", textBox4.Text);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Lap Hoa Don Thanh Cong");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                } 
+            }
+
+            //foreach
+            {
+                query = "";
+                query = "INSERT INTO CT_PDKTIEM VALUES (@MAPDKTIEM, @MAVC, @NGAYTIEM";
+                using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
+                {
+                    command.Parameters.AddWithValue("@MAPDKTIEM", textBox2.Text);
+                    command.Parameters.AddWithValue("@MAKH", textBox2.Text);
+                    command.Parameters.AddWithValue("@DIACHI", textBox3.Text);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Lap Hoa Don Thanh Cong");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+
+            query = "INSERT INTO HOADON VALUES" +
+                "(@MAHD, @HINHTHUC, @SOTIEN, @MADON, @DOTT, @TINHTRANG)";
+
+            using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
+            {
+                //Them PHIEUDK
+                command.Parameters.AddWithValue("@MAHD", textBox2.Text);
+                command.Parameters.AddWithValue("@HINHTHUC", textBox2.Text);
+                command.Parameters.AddWithValue("@SOTIEN", textBox3.Text);
+                command.Parameters.AddWithValue("@MADON", textBox4.Text);
+                command.Parameters.AddWithValue("@DOTT", textBox5.Text);
+                command.Parameters.AddWithValue("@TINHTRANG", textBox5.Text);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Lap Hoa Don Thanh Cong");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            query = "INSERT INTO DONMUAVC VALUES" +
+                "(@MADON, @MAKH, @NGAYDATMUA, @TONGTIEN)";
+
+            using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
+            {
+                //Them PHIEUDK
+                command.Parameters.AddWithValue("@MAHD", textBox2.Text);
+                command.Parameters.AddWithValue("@HINHTHUC", textBox2.Text);
+                command.Parameters.AddWithValue("@SOTIEN", textBox3.Text);
+                command.Parameters.AddWithValue("@MADON", textBox4.Text);
+                command.Parameters.AddWithValue("@DOTT", textBox5.Text);
+                command.Parameters.AddWithValue("@TINHTRANG", textBox5.Text);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Lap Hoa Don Thanh Cong");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            //foreach
+            {
+                query = "";
+                query = "INSERT INTO CT_DMVC VALUES (@MADON, @MAVC, @SOLUONG, @GIA";
+                using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
+                {
+                    command.Parameters.AddWithValue("@MADON", textBox2.Text);
+                    command.Parameters.AddWithValue("@MAVC", textBox2.Text);
+                    command.Parameters.AddWithValue("@SOLUONG", textBox3.Text);
+                    command.Parameters.AddWithValue("@GIA", textBox3.Text);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Lap Hoa Don Thanh Cong");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+
+            //foreach
+            {
+                query = "";
+                query = "INSERT INTO CT_PDKTIEM VALUES (@MAPDKTIEM, @MAVC, @NGAYTIEM";
+                using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
+                {
+                    command.Parameters.AddWithValue("@MAPDKTIEM", textBox2.Text);
+                    command.Parameters.AddWithValue("@MAKH", textBox2.Text);
+                    command.Parameters.AddWithValue("@DIACHI", textBox3.Text);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Lap Hoa Don Thanh Cong");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
         }
     }
 }

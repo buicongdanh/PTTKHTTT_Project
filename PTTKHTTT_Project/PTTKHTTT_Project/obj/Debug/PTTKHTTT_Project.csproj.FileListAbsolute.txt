@@ -61,3 +61,4 @@ C:\Users\ACER\Desktop\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Deb
 C:\Users\ACER\Desktop\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.KH_ThanhToan.resources
 C:\Users\ACER\Desktop\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.TT_DSVC_Dat.resources
 C:\Users\ACER\Desktop\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.NV_LapDonDatVC.resources
+C:\Users\ACER\Desktop\PTTKHTTT_Project\PTTKHTTT_Project\PTTKHTTT_Project\obj\Debug\PTTKHTTT_Project.NhapSoLuong.resources

@@ -66,7 +66,7 @@ namespace PTTKHTTT_Project
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
+            }    
         }
 
         private void NV_ThanhToan_Load(object sender, EventArgs e)
@@ -88,6 +88,44 @@ namespace PTTKHTTT_Project
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string q = "select top 1 mahd from hoadon order by mahd desc";
+            SqlCommand com = new SqlCommand(q, Menu_NV.con);
+            using (SqlDataReader read = com.ExecuteReader())
+            {
+                while (read.Read())
+                {
+                    string new_mahd = increment((read["mahd"].ToString()));
+
+                    textBox2.Text = new_mahd;
+                }
+            }
+        }
+
+        private string increment(string before)
+        {
+            string result = "HD";
+            string num = before.Substring(2, before.Length - 2);
+            int next_val = Convert.ToInt32(num);
+            next_val++;
+            //Get number digit
+            int temp = next_val;
+            int number_of_digit = 0;
+            while (temp != 0)
+            {
+                temp /= 10;
+                number_of_digit++;
+            }
+            //Making new MaHD
+            for (int i = 0; i < 6 - number_of_digit; i++)
+            {
+                result = result + "0";
+            }
+            result += next_val.ToString();
+            return result;
         }
     }
 }

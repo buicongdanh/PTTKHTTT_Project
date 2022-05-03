@@ -46,7 +46,7 @@ namespace PTTKHTTT_Project
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(552, 181);
+            this.dataGridView1.Size = new System.Drawing.Size(1083, 181);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -66,7 +66,7 @@ namespace PTTKHTTT_Project
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(552, 179);
+            this.dataGridView2.Size = new System.Drawing.Size(1083, 179);
             this.dataGridView2.TabIndex = 2;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
@@ -82,18 +82,20 @@ namespace PTTKHTTT_Project
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(354, 35);
+            this.label3.Location = new System.Drawing.Point(796, 45);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Số lượng";
+            this.label3.Visible = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(451, 32);
+            this.textBox1.Location = new System.Drawing.Point(893, 42);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 5;
+            this.textBox1.Visible = false;
             // 
             // ChonVaccine_Le
             // 

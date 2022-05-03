@@ -135,12 +135,13 @@ namespace PTTKHTTT_Project
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(816, 210);
+            this.button1.Location = new System.Drawing.Point(871, 224);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 28);
+            this.button1.Size = new System.Drawing.Size(125, 36);
             this.button1.TabIndex = 20;
             this.button1.Text = "Đặt mua";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 

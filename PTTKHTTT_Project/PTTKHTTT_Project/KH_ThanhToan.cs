@@ -56,7 +56,8 @@ namespace PTTKHTTT_Project
             //String q = "SELECT HD.MAHD,DM.MADON,DM.MAKH,DM.NGAYDATMUA,DM.TONGTIEN, HD.tinhtrang, HD.DoTT FROM HOADON HD JOIN DONMUAVC DM ON HD.madon = DM.MADON";
             string q = "SELECT HD.* " +
                 "FROM HOADON HD JOIN DONMUAVC DMVC ON (HD.MADON = DMVC.MADON) " +
-                "WHERE MAKH ='" + Menu_KH.MaKH + "'";
+                "JOIN KHACHHANG KH ON (DMVC.MAKH = KH.MAKH)" +
+                "WHERE KH.MAKH ='" + Menu_KH.MaKH + "'";
 
             if (textBox1.Text.Trim().Length > 0)
             {

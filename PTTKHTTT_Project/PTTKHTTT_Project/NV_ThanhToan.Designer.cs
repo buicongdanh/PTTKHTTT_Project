@@ -42,6 +42,7 @@ namespace PTTKHTTT_Project
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,11 +164,22 @@ namespace PTTKHTTT_Project
             this.label2.TabIndex = 34;
             this.label2.Text = "Mã HD";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(540, 24);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 24);
+            this.button3.TabIndex = 44;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // NV_ThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 945);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
@@ -207,5 +219,6 @@ namespace PTTKHTTT_Project
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button3;
     }
 }

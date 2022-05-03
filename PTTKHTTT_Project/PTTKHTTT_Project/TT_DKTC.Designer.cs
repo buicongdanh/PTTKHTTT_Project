@@ -46,13 +46,13 @@ namespace PTTKHTTT_Project
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(873, 489);
+            this.dataGridView1.Size = new System.Drawing.Size(967, 496);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(797, 642);
+            this.button1.Location = new System.Drawing.Point(889, 654);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 37);
@@ -62,7 +62,7 @@ namespace PTTKHTTT_Project
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(581, 642);
+            this.button2.Location = new System.Drawing.Point(671, 654);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(140, 37);
@@ -76,13 +76,13 @@ namespace PTTKHTTT_Project
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(79, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.Size = new System.Drawing.Size(143, 17);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Tìm kiếm";
+            this.label1.Text = "Tìm kiếm mã hóa đơn";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(181, 57);
+            this.textBox1.Location = new System.Drawing.Point(250, 60);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(157, 22);
@@ -90,7 +90,7 @@ namespace PTTKHTTT_Project
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(395, 54);
+            this.button3.Location = new System.Drawing.Point(463, 56);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(129, 30);

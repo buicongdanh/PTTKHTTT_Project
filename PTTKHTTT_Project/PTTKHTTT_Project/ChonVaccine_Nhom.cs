@@ -13,6 +13,8 @@ namespace PTTKHTTT_Project
 {
     public partial class ChonVaccine_Nhom : Form
     {
+        public static DataGridView dgvPublic = new DataGridView();
+
         public ChonVaccine_Nhom()
         {
             InitializeComponent();
@@ -24,8 +26,12 @@ namespace PTTKHTTT_Project
 
             dataGridView3.ColumnCount = 2;
             dataGridView3.Columns[0].Name = "MaGoi";
-            dataGridView3.Columns[1].Name = "TenGoi";
-            
+            dataGridView3.Columns[1].Name = "Thanh Tien";
+
+            dgvPublic.ColumnCount = 2;
+            dgvPublic.Columns[0].Name = "MaGoiVC";
+            dgvPublic.Columns[1].Name = "Thanh Tien";
+
             col1.UseColumnTextForButtonValue = true;
             col1.Text = "HUy";
             col1.Name = "";
@@ -63,7 +69,6 @@ namespace PTTKHTTT_Project
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -78,6 +83,7 @@ namespace PTTKHTTT_Project
                 {
                     DataGridViewRow dgvR = dataGridView1.Rows[e.RowIndex];
                     dataGridView3.Rows.Add(dgvR.Cells[1].Value, dgvR.Cells[2].Value, dgvR.Cells[0].Value);
+                    dgvPublic.Rows.Add(dgvR.Cells[1].Value, dgvR.Cells[2].Value, dgvR.Cells[0].Value);
 
                 }
                 catch (Exception ex)
@@ -119,6 +125,29 @@ namespace PTTKHTTT_Project
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn) //&& e.RowIndex >= 0)
+            {
+                try
+                {
+                    dataGridView3.Rows.RemoveAt(e.RowIndex);
+                    dgvPublic.Rows.RemoveAt(e.RowIndex);
+                    //dataGridView2.Rows.RemoveAt(dataGridView2.SelectedRows[e.RowIndex].Index);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    dataGridView3.Refresh();
+                }
+            }
         }
     }
 }
