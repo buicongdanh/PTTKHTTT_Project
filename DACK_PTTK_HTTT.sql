@@ -490,3 +490,8 @@ BEGIN
 	RETURN @RETURN_VAL
 END
 
+-- insert lai du lieu trong cac bang KHACHHANG, PHIEUDKTIEM, CT_PHIEUVC, DONMUAVC, CT_DMVC
+-- sau khi insert lai du lieu cho cac bang tren chay dong duoi 
+SELECT * FROM CT_DMVC
+update DONMUAVC 
+set makh = (select makh from phieudktiem where PHIEUDKTIEM.madon = DONMUAVC.MADON)
