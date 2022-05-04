@@ -75,7 +75,7 @@ namespace PTTKHTTT_Project
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(828, 170);
+            this.dataGridView1.Size = new System.Drawing.Size(916, 169);
             this.dataGridView1.TabIndex = 54;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -154,7 +154,7 @@ namespace PTTKHTTT_Project
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(828, 167);
+            this.dataGridView2.Size = new System.Drawing.Size(916, 166);
             this.dataGridView2.TabIndex = 57;
             // 
             // KH_ThanhToan

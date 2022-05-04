@@ -21,7 +21,6 @@ namespace PTTKHTTT_Project
 
         private void ChonVaccine_Le_Load(object sender, EventArgs e)
         {
-
             dataGridView2.ColumnCount = 3;
             dataGridView2.Columns[0].Name = "MaVC";
             dataGridView2.Columns[1].Name = "TenVC";

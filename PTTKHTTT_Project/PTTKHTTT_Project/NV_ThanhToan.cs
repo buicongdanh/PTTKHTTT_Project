@@ -98,16 +98,16 @@ namespace PTTKHTTT_Project
             {
                 while (read.Read())
                 {
-                    string new_mahd = increment((read["mahd"].ToString()));
+                    string new_mahd = increment((read["mahd"].ToString()), "HD");
 
                     textBox2.Text = new_mahd;
                 }
             }
         }
 
-        private string increment(string before)
+        public static string increment(string before, string head)
         {
-            string result = "HD";
+            string result = head;
             string num = before.Substring(2, before.Length - 2);
             int next_val = Convert.ToInt32(num);
             next_val++;

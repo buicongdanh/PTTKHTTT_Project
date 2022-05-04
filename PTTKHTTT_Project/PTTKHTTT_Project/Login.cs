@@ -23,7 +23,9 @@ namespace PTTKHTTT_Project
             label1.ForeColor = System.Drawing.ColorTranslator.FromHtml("#205072");
             button1.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
             button1.BackColor = System.Drawing.ColorTranslator.FromHtml("#329d9c");
-            
+
+            textBox1.Text = "Username";
+            textBox2.Text = "Password";
         }
 
         private void label_Exit_Click(object sender, EventArgs e)
@@ -33,15 +35,17 @@ namespace PTTKHTTT_Project
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text == "Username")
+            if (string.Compare(textBox1.Text.ToString(), "Username") == 0)
+            {
                 textBox1.Clear();
-            textBox1.TextAlign = HorizontalAlignment.Left;
+            }
+            textBox1.TextAlign = HorizontalAlignment.Center;
             textBox1.ForeColor = Color.Black;
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (string.IsNullOrEmpty(textBox1.Text))
             {
                 textBox1.Text = "Username";
                 textBox1.ForeColor = Color.Gray;
@@ -144,6 +148,28 @@ namespace PTTKHTTT_Project
                     con.Close();
                 }                
             }
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = true;
+            if (string.Compare(textBox2.Text.ToString(), "Password") == 0)
+            {
+                textBox2.Clear();
+            }
+            textBox2.TextAlign = HorizontalAlignment.Center;
+            textBox2.ForeColor = Color.Black;   
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox2.Text))
+            { 
+                textBox2.Text = "Password";
+                textBox2.ForeColor = Color.Gray;
+                textBox2.UseSystemPasswordChar = false;
+            }
+            textBox2.TextAlign = HorizontalAlignment.Center;
         }
     }
 }

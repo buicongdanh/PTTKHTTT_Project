@@ -43,7 +43,8 @@ namespace PTTKHTTT_Project
         {
             string MaPDK = dataGridView1.Rows[e.RowIndex].Cells["MaPDKTIEM"].Value.ToString();
             String q = "select ctp.MAPDKTIEM, CTP.MAVC, VC.TENVACCINE, CTP.NGAYTIEM " +
-                "from CT_PHIEUVC ctp, vaccine vc where ctp.MAPDKTIEM = '" + MaPDK + "' and ctp.mavc = vc.mavc";
+                "from CT_PHIEUVC ctp, vaccine vc " +
+                "where ctp.MAPDKTIEM = '" + MaPDK + "' and ctp.mavc = vc.mavc";
 
             try
             {
