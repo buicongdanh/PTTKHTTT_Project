@@ -16,7 +16,7 @@ namespace PTTKHTTT_Project
         //public static string conString = "Data Source=DESKTOP-2F5L5LM\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
         public static string conString = "Data Source=FINN\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
         public static SqlConnection con = new SqlConnection(conString);
-        public string MaNV;
+        public static string MaNV;
         public Menu_NV(string username)
         {
             MaNV = username;

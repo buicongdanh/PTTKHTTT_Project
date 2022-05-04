@@ -143,7 +143,75 @@ namespace PTTKHTTT_Project
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MaDS = dataGridView1.Rows[e.RowIndex].Cells["MaDS"].Value.ToString();
+            if(e.RowIndex >= 0)
+            {
+                string MaDS = dataGridView1.Rows[e.RowIndex].Cells["MaDS"].Value.ToString();
+
+                String q = "select CT_DSDAT.MaDS, CT_DSDAT.MaVC, " +
+                    "Vaccine.TenVaccine, CT_DSDAT.Soluong from CT_DSDAT, Vaccine " +
+                    "WHERE MADS = '" + MaDS + "' AND CT_DSDAT.MAVC = Vaccine.MAVC";
+                try
+                {
+                    SqlDataAdapter adp = new SqlDataAdapter(q, Menu_QL.con);
+                    DataSet ds = new DataSet();
+                    adp.Fill(ds);
+
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        dataGridView2.DataSource = ds.Tables[0];
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            String q = "select * from DSDATVACCINE";
+            if(textBox1.Text != "")
+            {
+                q += "WHERE MADS = " + textBox1.Text;
+            }
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(q, Menu_QL.con);
+                DataSet ds = new DataSet();
+                adp.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            String q = "select * from DSDATVACCINE WHERE DUYET = 0 AND LYDO = ''";
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(q, Menu_QL.con);
+                DataSet ds = new DataSet();
+                adp.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = ds.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

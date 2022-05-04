@@ -154,7 +154,26 @@ namespace PTTKHTTT_Project
                             });
 
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Dat thanh cong! MaDon: " + DonMua);
+
+                            sql = "USP_Vaccine_Add";
+                            SqlCommand cmd2 = new SqlCommand(sql, Menu_KH.con);
+                            cmd2.CommandType = CommandType.StoredProcedure;
+                            cmd2.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@MAVC",
+                                SqlDbType = SqlDbType.Char,
+                                Value = ChonVaccine_Nhom.dgv_Nhom_Public.Rows[rows].Cells[0].Value
+                            });
+                            cmd2.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@SOLUONG",
+                                SqlDbType = SqlDbType.Int,
+                                Value = -1
+                            });
+
+                            cmd2.ExecuteNonQuery();
                         }
                         catch (Exception ex)
                         {
@@ -204,6 +223,26 @@ namespace PTTKHTTT_Project
                             });
 
                             cmd.ExecuteNonQuery();
+
+                            sql = "USP_Vaccine_Add";
+                            SqlCommand cmd2 = new SqlCommand(sql, Menu_KH.con);
+                            cmd2.CommandType = CommandType.StoredProcedure;
+                            cmd2.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@MAVC",
+                                SqlDbType = SqlDbType.Char,
+                                Value = ChonVaccine_Le.dgv_Le_Public.Rows[rows].Cells[0].Value
+                            });
+                            cmd2.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@SOLUONG",
+                                SqlDbType = SqlDbType.Int,
+                                Value = - Convert.ToDouble(ChonVaccine_Le.dgv_Le_Public.Rows[rows].Cells[1].Value)
+                            });
+
+                            cmd2.ExecuteNonQuery();
                         }
                         catch (Exception ex)
                         {

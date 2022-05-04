@@ -18,75 +18,98 @@ namespace PTTKHTTT_Project
             InitializeComponent();
         }
 
+        private Form activeForm = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel_Childform.Controls.Add(childForm);
+            panel_Childform.Tag = childForm;
+            childForm.Show();
+        }
         private void NV_LapDonDatVC_Load(object sender, EventArgs e)
         {
-            string q = "select * from DSDATVACCINE where Duyet = 1;";
-            try
-            {
-                SqlDataAdapter adp = new SqlDataAdapter(q, Menu_NV.con);
-                DataSet ds = new DataSet();
-                adp.Fill(ds);
+            Form ChonVaccine_Le = new ChonVaccine_Le();
+            openChildForm(ChonVaccine_Le);
 
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    dataGridView1.DataSource = ds.Tables[0];
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            textBox2.Text = Menu_NV.MaNV;
+            textBox3.Text = DateTime.Today.ToString("yyyy-MM-dd");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO DONMUAVC VALUES" +
-                "(@MADON, @MAKH, @NGAYDATMUA, @TONGTIEN)";
-
-            using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
+            if(textBox1.Text == "")
             {
-                //Them PHIEUDK
-                command.Parameters.AddWithValue("@MADON", textBox2.Text);
-                command.Parameters.AddWithValue("@MAKH", textBox2.Text);
-                command.Parameters.AddWithValue("@NGAYDATMUA", textBox3.Text);
-                command.Parameters.AddWithValue("@TONGTIEN", textBox4.Text);
-
-                try
-                {
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Lap Hoa Don Thanh Cong");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show("Vui long tao ma");
             }
-
-            //foreach
+            if(ChonVaccine_Le.dgv_Le_Public.RowCount == 1)
             {
-                query = "";
-                query = "INSERT INTO CT_DMVC VALUES (@MADON, @MAVC, @SOLUONG, @GIA)";
-                using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
-                {
-                    command.Parameters.AddWithValue("@MADON", textBox2.Text);
-                    command.Parameters.AddWithValue("@MAVC", textBox2.Text);
-                    command.Parameters.AddWithValue("@SOLUONG", textBox3.Text);
-                    command.Parameters.AddWithValue("@GIA", textBox3.Text);
+                MessageBox.Show("Chua chon vaccine");
+            }
+            else
+            {
+                //Lap danh sach dat
+                string q = "INSERT INTO dsdatvaccine VALUES (@MADS, @NGAYLAP, @MANV, '', '')";
 
+                using (SqlCommand command = new SqlCommand(q, Menu_NV.con))
+                {
+                    command.Parameters.AddWithValue("@MADS", textBox1.Text);
+                    command.Parameters.AddWithValue("@NGAYLAP", textBox3.Text);
+                    command.Parameters.AddWithValue("@MANV", textBox2.Text);
                     try
                     {
                         command.ExecuteNonQuery();
-                        MessageBox.Show("Lap Hoa Don Thanh Cong");
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
                 }
+
+                //
+                q = "INSERT INTO CT_DSDAT VALUES (@MADS, @MAVC, @SOLUONG)";
+
+                for (int rows = 0; rows < ChonVaccine_Le.dgv_Le_Public.Rows.Count - 1; rows++)
+                {
+                    using (SqlCommand command = new SqlCommand(q, Menu_NV.con))
+                    {
+                        command.Parameters.AddWithValue("@MADS", textBox1.Text);
+                        command.Parameters.AddWithValue("@MAVC", ChonVaccine_Le.dgv_Le_Public.Rows[rows].Cells[0].Value.ToString());
+                        command.Parameters.AddWithValue("@SOLUONG", ChonVaccine_Le.dgv_Le_Public.Rows[rows].Cells[1].Value.ToString());
+                        try
+                        {
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+                MessageBox.Show("Lap thanh cong");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string q = "select top 1 MADS from dsdatvaccine order by MADS desc";
+            string DS = "";
+            SqlCommand com = new SqlCommand(q, Menu_NV.con);
+            using (SqlDataReader read = com.ExecuteReader())
+            {
+                while (read.Read())
+                {
+                    DS = NV_ThanhToan.increment((read["MADS"].ToString()), "DS");
+                }
             }
 
-            //update du lieu [SLT] trong [Vaccine]
-            //su dung sp USP_Vaccine_Add
+            textBox1.Text = DS;
         }
+
+
     }
 }

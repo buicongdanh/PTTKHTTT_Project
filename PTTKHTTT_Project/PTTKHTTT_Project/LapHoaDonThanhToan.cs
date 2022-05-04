@@ -90,7 +90,7 @@ namespace PTTKHTTT_Project
         {
             string q = "select top 1 MAHD from HOADON order by MAHD desc";
             string MaHD = "";
-            SqlCommand com = new SqlCommand(q, Menu_KH.con);
+            SqlCommand com = new SqlCommand(q, Menu_NV.con);
             using (SqlDataReader read = com.ExecuteReader())
             {
                 while (read.Read())
@@ -98,7 +98,6 @@ namespace PTTKHTTT_Project
                     MaHD = NV_ThanhToan.increment((read["MAHD"].ToString()), "HD");
                 }
             }
-            MessageBox.Show(MaHD);
         }
     }
 }
