@@ -37,7 +37,7 @@ namespace PTTKHTTT_Project
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(371, 114);
+            this.textBox1.Location = new System.Drawing.Point(333, 114);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(182, 22);
             this.textBox1.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace PTTKHTTT_Project
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(131, 117);
+            this.label1.Location = new System.Drawing.Point(150, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 17);
             this.label1.TabIndex = 1;
@@ -54,18 +54,18 @@ namespace PTTKHTTT_Project
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(384, 244);
+            this.button1.Location = new System.Drawing.Point(371, 230);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(93, 30);
             this.button1.TabIndex = 2;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(194, 244);
+            this.button2.Location = new System.Drawing.Point(181, 230);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(93, 30);
             this.button2.TabIndex = 2;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;

@@ -103,5 +103,20 @@ namespace PTTKHTTT_Project
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string q = "select top 1 MAHD from HOADON order by MAHD desc";
+            string MaHD = "";
+            SqlCommand com = new SqlCommand(q, Menu_KH.con);
+            using (SqlDataReader read = com.ExecuteReader())
+            {
+                while (read.Read())
+                {
+                    MaHD = NV_ThanhToan.increment((read["MAHD"].ToString()), "HD");
+                }
+            }
+            textBox2.Text = MaHD;
+        }
     }
 }

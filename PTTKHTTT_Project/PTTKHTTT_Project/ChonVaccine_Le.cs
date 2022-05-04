@@ -13,7 +13,9 @@ namespace PTTKHTTT_Project
 {
     public partial class ChonVaccine_Le : Form
     {
-        public static DataGridView dgvPublic = new DataGridView();
+        public static DataGridView dgv_Le_Public = new DataGridView();
+        public static double tongtien = 0;
+
         public ChonVaccine_Le()
         {
             InitializeComponent();
@@ -21,15 +23,19 @@ namespace PTTKHTTT_Project
 
         private void ChonVaccine_Le_Load(object sender, EventArgs e)
         {
-            dataGridView2.ColumnCount = 3;
+            dgv_Le_Public.Rows.Clear();
+            dgv_Le_Public.Refresh();
+
+            dataGridView2.ColumnCount = 4;
             dataGridView2.Columns[0].Name = "MaVC";
             dataGridView2.Columns[1].Name = "TenVC";
             dataGridView2.Columns[2].Name = "SoLuong";
+            dataGridView2.Columns[3].Name = "Gia";
 
-            dgvPublic.ColumnCount = 3;
-            dgvPublic.Columns[0].Name = "MaVC";
-            dgvPublic.Columns[1].Name = "TenVC";
-            dgvPublic.Columns[2].Name = "SoLuong";
+            dgv_Le_Public.ColumnCount = 3;
+            dgv_Le_Public.Columns[0].Name = "MaVC";
+            dgv_Le_Public.Columns[1].Name = "SoLuong";
+            dgv_Le_Public.Columns[2].Name = "Gia";
 
             DataGridViewButtonColumn col1 = new DataGridViewButtonColumn();
             col1.UseColumnTextForButtonValue = true;
@@ -74,32 +80,6 @@ namespace PTTKHTTT_Project
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                /*
-                if (textBox1.Text == "" || int.Parse(textBox1.Text) <= 0)
-                {
-                    MessageBox.Show("Vui lòng nhập số lượng Vaccine");
-
-                }
-                else
-                {
-                    try
-                    {
-                        DataGridViewRow dgvR = dataGridView1.Rows[e.RowIndex];
-                        dataGridView2.Rows.Add(dgvR.Cells[1].Value, dgvR.Cells[2].Value, textBox1.Text);
-                        dgvPublic.Rows.Add(dgvR.Cells[1].Value, dgvR.Cells[2].Value, textBox1.Text);
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    finally
-                    {
-                        textBox1.Text = "";
-                        dataGridView2.Refresh();
-                    }
-                } 
-                */
                 int soluong = 0;
                 using(NhapSoLuong f_NhapSoLuong = new NhapSoLuong())
                 {
@@ -115,9 +95,12 @@ namespace PTTKHTTT_Project
                             try
                             {
                                 DataGridViewRow dgvR = dataGridView1.Rows[e.RowIndex];
-                                dataGridView2.Rows.Add(dgvR.Cells[1].Value, dgvR.Cells[2].Value, soluong.ToString());
-                                dgvPublic.Rows.Add(dgvR.Cells[1].Value, dgvR.Cells[2].Value, soluong.ToString());
+                                dataGridView2.Rows.Add(dgvR.Cells[1].Value, dgvR.Cells[2].Value, soluong.ToString(), dgvR.Cells[5].Value);
+                                dgv_Le_Public.Rows.Add(dgvR.Cells[1].Value, soluong.ToString(), dgvR.Cells[5].Value);
 
+                                double dongia = Convert.ToDouble(dgvR.Cells[5].Value.ToString());
+                                tongtien += soluong * dongia;
+                                label4.Text = "Gia: " + tongtien.ToString();
                             }
                             catch (Exception ex)
                             {
@@ -142,7 +125,7 @@ namespace PTTKHTTT_Project
                 try
                 {
                     dataGridView2.Rows.RemoveAt(e.RowIndex);
-                    dgvPublic.Rows.RemoveAt(e.RowIndex);
+                    dgv_Le_Public.Rows.RemoveAt(e.RowIndex);
                     //dataGridView2.Rows.RemoveAt(dataGridView2.SelectedRows[e.RowIndex].Index);
                 }
                 catch (Exception ex)

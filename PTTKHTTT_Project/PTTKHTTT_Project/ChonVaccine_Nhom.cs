@@ -13,7 +13,8 @@ namespace PTTKHTTT_Project
 {
     public partial class ChonVaccine_Nhom : Form
     {
-        public static DataGridView dgvPublic = new DataGridView();
+        public static DataGridView dgv_Nhom_Public = new DataGridView();
+        public static double tongtien = 0;
 
         public ChonVaccine_Nhom()
         {
@@ -22,21 +23,18 @@ namespace PTTKHTTT_Project
 
         private void ChonVaccine_Nhom_Load(object sender, EventArgs e)
         {
-            DataGridViewButtonColumn col1 = new DataGridViewButtonColumn();
+            dgv_Nhom_Public.Rows.Clear();
+            dgv_Nhom_Public.Refresh();
 
             dataGridView3.ColumnCount = 2;
             dataGridView3.Columns[0].Name = "MaGoi";
             dataGridView3.Columns[1].Name = "Thanh Tien";
 
-            dgvPublic.ColumnCount = 2;
-            dgvPublic.Columns[0].Name = "MaGoiVC";
-            dgvPublic.Columns[1].Name = "Thanh Tien";
+            dgv_Nhom_Public.ColumnCount = 3;
+            dgv_Nhom_Public.Columns[0].Name = "MaVC";
+            dgv_Nhom_Public.Columns[1].Name = "SoLuong";
+            dgv_Nhom_Public.Columns[2].Name = "Gia";
 
-            col1.UseColumnTextForButtonValue = true;
-            col1.Text = "HUy";
-            col1.Name = "";
-
-            dataGridView3.Columns.Add(col1);
             String q = "select * from goivc";
 
             try
@@ -73,6 +71,27 @@ namespace PTTKHTTT_Project
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            string MaGoi = dataGridView1.Rows[e.RowIndex].Cells["magoi"].Value.ToString();
+            String q = "select vc.* from ct_goivc ctg, vaccine vc " +
+                "where ctg.magoi = '" + MaGoi + "' and ctg.mavc = vc.mavc";
+
+            try
+            {
+                SqlDataAdapter adp = new SqlDataAdapter(q, Menu_KH.con);
+                DataSet ds = new DataSet();
+                adp.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    dataGridView2.DataSource = ds.Tables[0];
+                    dataGridView2.Refresh();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             var senderGrid = (DataGridView)sender;
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
@@ -83,8 +102,16 @@ namespace PTTKHTTT_Project
                 {
                     DataGridViewRow dgvR = dataGridView1.Rows[e.RowIndex];
                     dataGridView3.Rows.Add(dgvR.Cells[1].Value, dgvR.Cells[2].Value, dgvR.Cells[0].Value);
-                    dgvPublic.Rows.Add(dgvR.Cells[1].Value, dgvR.Cells[2].Value, dgvR.Cells[0].Value);
 
+                    for (int rows = 0; rows < dataGridView2.Rows.Count - 1; rows++)
+                    {
+                        dgv_Nhom_Public.Rows.Add(dataGridView2.Rows[rows].Cells[0].Value, "1", 
+                            dataGridView2.Rows[rows].Cells[4].Value);
+                    }
+
+                    double dongia = Convert.ToDouble(dgvR.Cells[2].Value.ToString());
+                    tongtien += dongia;
+                    label4.Text = "Gia: " + tongtien.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -92,28 +119,6 @@ namespace PTTKHTTT_Project
                 }
 
                 MessageBox.Show("Chọn vaccine " + dataGridView1.Rows[e.RowIndex].Cells["magoi"].Value.ToString());
-            }
-
-            else
-            {
-                string MaGoi = dataGridView1.Rows[e.RowIndex].Cells["magoi"].Value.ToString();
-                String q = "select vc.* from ct_goivc ctg, vaccine vc where ctg.magoi = '" + MaGoi + "' and ctg.mavc = vc.mavc";
-
-                try
-                {
-                    SqlDataAdapter adp = new SqlDataAdapter(q, Menu_KH.con);
-                    DataSet ds = new DataSet();
-                    adp.Fill(ds);
-
-                    if (ds.Tables[0].Rows.Count > 0)
-                    {
-                        dataGridView2.DataSource = ds.Tables[0];
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
             }
         }
 
@@ -133,20 +138,7 @@ namespace PTTKHTTT_Project
 
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn) //&& e.RowIndex >= 0)
             {
-                try
-                {
-                    dataGridView3.Rows.RemoveAt(e.RowIndex);
-                    dgvPublic.Rows.RemoveAt(e.RowIndex);
-                    //dataGridView2.Rows.RemoveAt(dataGridView2.SelectedRows[e.RowIndex].Index);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    dataGridView3.Refresh();
-                }
+
             }
         }
     }

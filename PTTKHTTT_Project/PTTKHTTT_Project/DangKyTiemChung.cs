@@ -99,27 +99,148 @@ namespace PTTKHTTT_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Xu ly thong tin
-            if (comboBox1.Text == "")
+            if (comboBox1.Text == "" || textBox_Date.Text == "")
             {
                 MessageBox.Show("Thong tin dang ky khong hop le, vui long nhap lai!");
             }
-            else if (ChonVaccine_Le.dgvPublic.RowCount == 1 && comboBox1.Text == "Tiêm lẻ")
+            else if (ChonVaccine_Le.dgv_Le_Public.RowCount == 1 || ChonVaccine_Nhom.dgv_Nhom_Public.RowCount == 1)
             {
                 MessageBox.Show("Ban chua chon vaccine!");
             }
-            else if (ChonVaccine_Nhom.dgvPublic.RowCount == 1 && comboBox1.Text == "Tiêm theo gói")
-            {
-                MessageBox.Show("Ban chua chon vaccine!");
-            }
-
-            //Dieu kien hop le
             else
             {
-                //Generate MaPhieuDK
-                string q = "select top 1 MAPDKTIEM from PHIEUDKTIEM order by MAPDKTIEM desc";
-                string MaPDKTiem = "";
+                //Tao MaDonMua
+                string q = "select top 1 MADON from DONMUAVC order by MADON desc";
+                string DonMua = "";
                 SqlCommand com = new SqlCommand(q, Menu_KH.con);
+                using (SqlDataReader read = com.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        DonMua = NV_ThanhToan.increment((read["MADON"].ToString()), "DM");
+                    }
+                }
+
+                //Them DonMuaVC
+                q = "INSERT INTO DONMUAVC (MADON, MAKH, NGAYDATMUA) " +
+                    "VALUES (@MADON, @MAKH, @NGAYDATMUA)";
+
+                using (SqlCommand command = new SqlCommand(q, Menu_KH.con))
+                {
+                    command.Parameters.AddWithValue("@MADON", DonMua);
+                    command.Parameters.AddWithValue("@MAKH", Menu_KH.MaKH);
+                    command.Parameters.AddWithValue("@NGAYDATMUA", textBox_Date.Text);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Lap Hoa Don Thanh Cong");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+                //Them chi tiet don mua
+                if (comboBox1.Text == "Tiêm theo gói")
+                {
+                    for (int rows = 0; rows < ChonVaccine_Nhom.dgv_Nhom_Public.Rows.Count - 1; rows++)
+                    {
+                        try
+                        {
+                            string sql = "USP_Add_CT_DMVC";
+                            SqlCommand cmd = new SqlCommand(sql, Menu_KH.con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@MADON",
+                                SqlDbType = SqlDbType.Char,
+                                Value = DonMua
+                            });
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@MAVC",
+                                SqlDbType = SqlDbType.Char,
+                                Value = ChonVaccine_Nhom.dgv_Nhom_Public.Rows[rows].Cells[0].Value.ToString()
+                            });
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@SOLUONG",
+                                SqlDbType = SqlDbType.Int,
+                                Value = 1
+                            });
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@GIA",
+                                SqlDbType = SqlDbType.Decimal,
+                                Value = Convert.ToDouble(ChonVaccine_Nhom.dgv_Nhom_Public.Rows[rows].Cells[1].Value)
+                            });
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+
+                else if (comboBox1.Text == "Tiêm lẻ")
+                {
+                    for (int rows = 0; rows < ChonVaccine_Le.dgv_Le_Public.Rows.Count - 1; rows++)
+                    {
+                        try
+                        {
+                            string sql = "USP_Add_CT_DMVC";
+                            SqlCommand cmd = new SqlCommand(sql, Menu_KH.con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@MADON",
+                                SqlDbType = SqlDbType.Char,
+                                Value = DonMua
+                            });
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@MAVC",
+                                SqlDbType = SqlDbType.Char,
+                                Value = ChonVaccine_Le.dgv_Le_Public.Rows[rows].Cells[0].Value.ToString()
+                            });
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@SOLUONG",
+                                SqlDbType = SqlDbType.Int,
+                                Value = Convert.ToDouble(ChonVaccine_Le.dgv_Le_Public.Rows[rows].Cells[1].Value)
+                            });
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@GIA",
+                                SqlDbType = SqlDbType.Decimal,
+                                Value = Convert.ToDouble(ChonVaccine_Le.dgv_Le_Public.Rows[rows].Cells[2].Value)
+                            });
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+
+                //Generate MaPhieuDK
+                q = "select top 1 MAPDKTIEM from PHIEUDKTIEM order by MAPDKTIEM desc";
+                string MaPDKTiem = "";
+                com = new SqlCommand(q, Menu_KH.con);
                 using (SqlDataReader read = com.ExecuteReader())
                 {
                     while (read.Read())
@@ -128,30 +249,27 @@ namespace PTTKHTTT_Project
                     }
                 }
 
-                MessageBox.Show(MaPDKTiem);
-/*
-                //PHIEUDK
-                String query = "INSERT INTO PHIEUDKTIEM VALUES" +
-                    "(@MAPDKTIEM, @MAKH, @DIACHI, @GIOITINH, @NGAYTIEM, " +
-                    "@HOTEN, @SDT, @HOTEN_NGH, @SDT_NGH, @MQH)";
-
-                using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
+                //Them PhieuDK
+                q = "INSERT INTO PHIEUDKTIEM VALUES (@MAPDKTIEM, @MAKH, @DIACHI, @GIOITINH, @NGAYTIEM, " +
+                    "@HOTEN, @SDT, @HOTEN_NGH, @SDT_NGH, @MQH, @MADON)";
+                using (SqlCommand command = new SqlCommand(q, Menu_KH.con))
                 {
-                    command.Parameters.AddWithValue("@MAPDKTIEM", textBox2.Text);
-                    command.Parameters.AddWithValue("@MAKH", textBox2.Text);
-                    command.Parameters.AddWithValue("@DIACHI", textBox3.Text);
-                    command.Parameters.AddWithValue("@GIOITINH", textBox4.Text);
-                    command.Parameters.AddWithValue("@NGAYTIEM", textBox5.Text);
-                    command.Parameters.AddWithValue("@HOTEN", textBox5.Text);
-                    command.Parameters.AddWithValue("@SDT", textBox2.Text);
-                    command.Parameters.AddWithValue("@HOTEN_NGH", textBox2.Text);
-                    command.Parameters.AddWithValue("@SDT_NGH", textBox3.Text);
-                    command.Parameters.AddWithValue("@MQH", textBox4.Text);
+                    command.Parameters.AddWithValue("@MAPDKTIEM", MaPDKTiem);
+                    command.Parameters.AddWithValue("@MAKH", Menu_KH.MaKH);
+                    command.Parameters.AddWithValue("@DIACHI", textBox4.Text);
+                    command.Parameters.AddWithValue("@GIOITINH", "0");
+                    command.Parameters.AddWithValue("@NGAYTIEM", textBox_Date.Text);
+                    command.Parameters.AddWithValue("@HOTEN", textBox3.Text);
+                    command.Parameters.AddWithValue("@SDT", textBox5.Text);
+                    command.Parameters.AddWithValue("@HOTEN_NGH", textBox_Ten.Text);
+                    command.Parameters.AddWithValue("@SDT_NGH", textBox_.Text);
+                    command.Parameters.AddWithValue("@MQH", textBox1.Text);
+                    command.Parameters.AddWithValue("@MADON", DonMua);
 
                     try
                     {
                         command.ExecuteNonQuery();
-                        MessageBox.Show("Lap Hoa Don Thanh Cong");
+                        MessageBox.Show("Dang ky thanh cong");
                     }
                     catch (Exception ex)
                     {
@@ -159,120 +277,50 @@ namespace PTTKHTTT_Project
                     }
                 }
 
-                //foreach
-                {
-                    query = "";
-                    query = "INSERT INTO CT_PDKTIEM VALUES (@MAPDKTIEM, @MAVC, @NGAYTIEM";
-                    using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
-                    {
-                        command.Parameters.AddWithValue("@MAPDKTIEM", textBox2.Text);
-                        command.Parameters.AddWithValue("@MAKH", textBox2.Text);
-                        command.Parameters.AddWithValue("@DIACHI", textBox3.Text);
+                //Them CT_PhieuDK
+                q = "INSERT INTO CT_PHIEUVC VALUES (@MAPDKTIEM, @MAVC, @NGAYTIEM)";
 
-                        try
+                if (comboBox1.Text == "Tiêm theo gói")
+                {
+                    for (int rows = 0; rows < ChonVaccine_Nhom.dgv_Nhom_Public.Rows.Count - 1; rows++)
+                    {
+                        using (SqlCommand command = new SqlCommand(q, Menu_KH.con))
                         {
-                            command.ExecuteNonQuery();
-                            MessageBox.Show("Lap Hoa Don Thanh Cong");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
+                            command.Parameters.AddWithValue("@MAPDKTIEM", MaPDKTiem);
+                            command.Parameters.AddWithValue("@MAVC", ChonVaccine_Nhom.dgv_Nhom_Public.Rows[rows].Cells[0].Value.ToString());
+                            command.Parameters.AddWithValue("@NGAYTIEM", textBox_Date.Text);
+                            try
+                            {
+                                command.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
                         }
                     }
                 }
 
-                query = "INSERT INTO HOADON VALUES" +
-                    "(@MAHD, @HINHTHUC, @SOTIEN, @MADON, @DOTT, @TINHTRANG)";
-
-                using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
+                if (comboBox1.Text == "Tiêm lẻ")
                 {
-                    //Them PHIEUDK
-                    command.Parameters.AddWithValue("@MAHD", textBox2.Text);
-                    command.Parameters.AddWithValue("@HINHTHUC", textBox2.Text);
-                    command.Parameters.AddWithValue("@SOTIEN", textBox3.Text);
-                    command.Parameters.AddWithValue("@MADON", textBox4.Text);
-                    command.Parameters.AddWithValue("@DOTT", textBox5.Text);
-                    command.Parameters.AddWithValue("@TINHTRANG", textBox5.Text);
-
-                    try
+                    for (int rows = 0; rows < ChonVaccine_Le.dgv_Le_Public.Rows.Count - 1; rows++)
                     {
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Lap Hoa Don Thanh Cong");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-
-                query = "INSERT INTO DONMUAVC VALUES" +
-                    "(@MADON, @MAKH, @NGAYDATMUA, @TONGTIEN)";
-
-                using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
-                {
-                    //Them PHIEUDK
-                    command.Parameters.AddWithValue("@MAHD", textBox2.Text);
-                    command.Parameters.AddWithValue("@HINHTHUC", textBox2.Text);
-                    command.Parameters.AddWithValue("@SOTIEN", textBox3.Text);
-                    command.Parameters.AddWithValue("@MADON", textBox4.Text);
-                    command.Parameters.AddWithValue("@DOTT", textBox5.Text);
-                    command.Parameters.AddWithValue("@TINHTRANG", textBox5.Text);
-
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Lap Hoa Don Thanh Cong");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-
-                //foreach
-                {
-                    query = "";
-                    query = "INSERT INTO CT_DMVC VALUES (@MADON, @MAVC, @SOLUONG, @GIA";
-                    using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
-                    {
-                        command.Parameters.AddWithValue("@MADON", textBox2.Text);
-                        command.Parameters.AddWithValue("@MAVC", textBox2.Text);
-                        command.Parameters.AddWithValue("@SOLUONG", textBox3.Text);
-                        command.Parameters.AddWithValue("@GIA", textBox3.Text);
-
-                        try
+                        using (SqlCommand command = new SqlCommand(q, Menu_KH.con))
                         {
-                            command.ExecuteNonQuery();
-                            MessageBox.Show("Lap Hoa Don Thanh Cong");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
+                            command.Parameters.AddWithValue("@MAPDKTIEM", MaPDKTiem);
+                            command.Parameters.AddWithValue("@MAVC", ChonVaccine_Le.dgv_Le_Public.Rows[rows].Cells[0].Value.ToString());
+                            command.Parameters.AddWithValue("@NGAYTIEM", textBox_Date.Text);
+                            try
+                            {
+                                command.ExecuteNonQuery();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
                         }
                     }
                 }
-
-                //foreach
-                {
-                    query = "";
-                    query = "INSERT INTO CT_PDKTIEM VALUES (@MAPDKTIEM, @MAVC, @NGAYTIEM";
-                    using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
-                    {
-                        command.Parameters.AddWithValue("@MAPDKTIEM", textBox2.Text);
-                        command.Parameters.AddWithValue("@MAKH", textBox2.Text);
-                        command.Parameters.AddWithValue("@DIACHI", textBox3.Text);
-
-                        try
-                        {
-                            command.ExecuteNonQuery();
-                            MessageBox.Show("Lap Hoa Don Thanh Cong");
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                    }
-                }*/
             }
         }
     }

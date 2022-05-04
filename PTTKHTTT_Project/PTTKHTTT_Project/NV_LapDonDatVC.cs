@@ -65,7 +65,7 @@ namespace PTTKHTTT_Project
             //foreach
             {
                 query = "";
-                query = "INSERT INTO CT_DMVC VALUES (@MADON, @MAVC, @SOLUONG, @GIA";
+                query = "INSERT INTO CT_DMVC VALUES (@MADON, @MAVC, @SOLUONG, @GIA)";
                 using (SqlCommand command = new SqlCommand(query, Menu_NV.con))
                 {
                     command.Parameters.AddWithValue("@MADON", textBox2.Text);

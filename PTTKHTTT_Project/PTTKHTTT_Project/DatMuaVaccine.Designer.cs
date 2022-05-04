@@ -39,7 +39,6 @@ namespace PTTKHTTT_Project
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Childform = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -124,15 +123,6 @@ namespace PTTKHTTT_Project
             this.panel_Childform.Size = new System.Drawing.Size(1080, 640);
             this.panel_Childform.TabIndex = 18;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(585, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 17);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Giá";
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(871, 224);
@@ -162,7 +152,6 @@ namespace PTTKHTTT_Project
             this.ClientSize = new System.Drawing.Size(1080, 945);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel_Childform);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -193,7 +182,6 @@ namespace PTTKHTTT_Project
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel_Childform;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
     }

@@ -22,7 +22,7 @@ namespace PTTKHTTT_Project
         private void DatMuaVaccine_Load(object sender, EventArgs e)
         {
             String q = "select HOTEN, DIACHI, SDT from KHACHHANG WHERE MAKH ='" + Menu_KH.MaKH + "'";
-
+            
             SqlCommand cmd = new SqlCommand(q);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             cmd.Connection = Menu_KH.con;
@@ -75,36 +75,144 @@ namespace PTTKHTTT_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*
-            if(comboBox1.Text == "Mua nhóm")
+            if(comboBox1.Text == "")
             {
-                MessageBox.Show("TB");
-                DataGridView dgv_nhom = ChonVaccine_Nhom.dgvPublic;
-                for (int rows = 0; rows < dgv_nhom.Rows.Count - 1; rows++)
+                MessageBox.Show("Chua chon vaccine");
+            }    
+            else
+            {
+                //Tao MaDonMua
+                string q = "select top 1 MADON from DONMUAVC order by MADON desc";
+                string DonMua = "";
+                SqlCommand com = new SqlCommand(q, Menu_KH.con);
+                using (SqlDataReader read = com.ExecuteReader())
                 {
-                    for (int col = 0; col < dgv_nhom.Rows[rows].Cells.Count; col++)
+                    while (read.Read())
                     {
-                        MessageBox.Show(dgv_nhom.Rows[rows].Cells[col].Value.ToString());
+                        DonMua = NV_ThanhToan.increment((read["MADON"].ToString()), "DM");
                     }
                 }
-            }   
 
-            if(comboBox1.Text == "Mua lẻ")
-            {
-                DataGridView dgv_nhom = ChonVaccine_Le.dgvPublic;
-                for (int rows = 0; rows < dgv_nhom.Rows.Count - 1; rows++)
+                //Them DonMuaVC
+                q = "INSERT INTO DONMUAVC (MADON, MAKH, NGAYDATMUA) " +
+                    "VALUES (@MADON, @MAKH, @NGAYDATMUA)";
+
+                using (SqlCommand command = new SqlCommand(q, Menu_KH.con))
                 {
-                    for (int col = 0; col < dgv_nhom.Rows[rows].Cells.Count; col++)
-                    {
-                        MessageBox.Show(dgv_nhom.Rows[rows].Cells[col].Value.ToString());
+                    command.Parameters.AddWithValue("@MADON", DonMua);
+                    command.Parameters.AddWithValue("@MAKH", Menu_KH.MaKH);
+                    command.Parameters.AddWithValue("@NGAYDATMUA", "");
 
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Lap Hoa Don Thanh Cong");
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+
+                //Them chi tiet don mua
+                if (comboBox1.Text == "Mua theo gói")
+                {
+                    for (int rows = 0; rows < ChonVaccine_Nhom.dgv_Nhom_Public.Rows.Count - 1; rows++)
+                    {
+                        try
+                        {
+                            string sql = "USP_Add_CT_DMVC";
+                            SqlCommand cmd = new SqlCommand(sql, Menu_KH.con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@MADON",
+                                SqlDbType = SqlDbType.Char,
+                                Value = DonMua
+                            });
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@MAVC",
+                                SqlDbType = SqlDbType.Char,
+                                Value = ChonVaccine_Nhom.dgv_Nhom_Public.Rows[rows].Cells[0].Value.ToString()
+                            });
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@SOLUONG",
+                                SqlDbType = SqlDbType.Int,
+                                Value = 1
+                            });
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@GIA",
+                                SqlDbType = SqlDbType.Decimal,
+                                Value = Convert.ToDouble(ChonVaccine_Nhom.dgv_Nhom_Public.Rows[rows].Cells[1].Value)
+                            });
+
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Dat thanh cong! MaDon: " + DonMua);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+
+                else if (comboBox1.Text == "Mua lẻ")
+                {
+                    for (int rows = 0; rows < ChonVaccine_Le.dgv_Le_Public.Rows.Count - 1; rows++)
+                    {
+                        try
+                        {
+                            MessageBox.Show(ChonVaccine_Le.dgv_Le_Public.Rows.Count.ToString());
+
+                            string sql = "USP_Add_CT_DMVC";
+                            SqlCommand cmd = new SqlCommand(sql, Menu_KH.con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@MADON",
+                                SqlDbType = SqlDbType.Char,
+                                Value = DonMua
+                            });
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@MAVC",
+                                SqlDbType = SqlDbType.Char,
+                                Value = ChonVaccine_Le.dgv_Le_Public.Rows[rows].Cells[0].Value.ToString()
+                            });
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@SOLUONG",
+                                SqlDbType = SqlDbType.Int,
+                                Value = Convert.ToDouble(ChonVaccine_Le.dgv_Le_Public.Rows[rows].Cells[1].Value)
+                            });
+                            cmd.Parameters.Add(new SqlParameter()
+                            {
+                                Direction = ParameterDirection.Input,
+                                ParameterName = "@GIA",
+                                SqlDbType = SqlDbType.Decimal,
+                                Value = Convert.ToDouble(ChonVaccine_Le.dgv_Le_Public.Rows[rows].Cells[2].Value)
+                            });
+
+                            cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    MessageBox.Show("Dat thanh cong! MaDon: " + DonMua);
                 }
             }
-            */
-
-            //to-do
-            //Xu ly dat mua
         }
     }
 }
