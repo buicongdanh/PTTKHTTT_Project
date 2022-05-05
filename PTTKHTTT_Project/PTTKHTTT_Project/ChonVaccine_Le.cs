@@ -99,7 +99,7 @@ namespace PTTKHTTT_Project
                                 dgv_Le_Public.Rows.Add(dgvR.Cells[1].Value, soluong.ToString(), dgvR.Cells[5].Value);
 
                                 double dongia = Convert.ToDouble(dgvR.Cells[5].Value.ToString());
-                                tongtien += soluong * dongia;
+                                tongtien += dongia;
                                 label4.Text = "Gia: " + tongtien.ToString();
                             }
                             catch (Exception ex)
@@ -124,9 +124,19 @@ namespace PTTKHTTT_Project
             {
                 try
                 {
+                    double soluong, dongia;
+                    soluong = Convert.ToDouble(dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    dongia = Convert.ToDouble(dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString());
+
+                    tongtien -= soluong * dongia;
+
+                    label4.Text = "Gia: " + tongtien.ToString();
                     dataGridView2.Rows.RemoveAt(e.RowIndex);
                     dgv_Le_Public.Rows.RemoveAt(e.RowIndex);
                     //dataGridView2.Rows.RemoveAt(dataGridView2.SelectedRows[e.RowIndex].Index);
+
+                    DataGridViewRow dgvR = dataGridView2.Rows[e.RowIndex];
+
                 }
                 catch (Exception ex)
                 {
