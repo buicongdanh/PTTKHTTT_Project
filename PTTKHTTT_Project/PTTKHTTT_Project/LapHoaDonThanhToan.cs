@@ -96,6 +96,7 @@ namespace PTTKHTTT_Project
                 while (read.Read())
                 {
                     MaHD = NV_ThanhToan.increment((read["MAHD"].ToString()), "HD");
+                    textBox2.Text = MaHD;
                 }
             }
         }
