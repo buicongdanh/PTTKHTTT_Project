@@ -21,10 +21,11 @@ namespace PTTKHTTT_Project
         private void button1_Click(object sender, EventArgs e)
         {
             String query = "INSERT INTO HOADON VALUES('@MAHD', '@HINHTHUC', @SOTIEN, '@MADON', @DOTT, 'DTT')";
-            
+            query = "INSERT INTO HOADON VALUES('" + textBox2.Text + "', '" + textBox6.Text + "'," + textBox3.Text 
+                + ", '" + comboBox1.Text + "'," + textBox4.Text + ",'DTT')";
             using (SqlCommand command = new SqlCommand(query, Menu_KH.con))
             {
-                string temp = textBox2.Text;
+                /*string temp = textBox2.Text;
                 command.Parameters.AddWithValue("@MAHD", temp);
                 temp = textBox6.Text;
                 command.Parameters.AddWithValue("@HINHTHUC", temp);
@@ -33,11 +34,12 @@ namespace PTTKHTTT_Project
                 temp = comboBox1.Text;
                 command.Parameters.AddWithValue("@MADON", temp);
                 temp = textBox4.Text;
-                command.Parameters.AddWithValue("@DOTT", int.Parse(temp));
+                command.Parameters.AddWithValue("@DOTT", int.Parse(temp));*/
                 
                 try
                 {
                     command.ExecuteNonQuery();
+                    //MessageBox.Show(query);
                     MessageBox.Show("Thanh Toan Hoa Don Thanh Cong");
                 }
                 catch (Exception ex)
