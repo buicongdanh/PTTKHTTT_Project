@@ -64,7 +64,8 @@ namespace PTTKHTTT_Project
             }
             else
             {
-                string conString = "Data Source=FINN\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
+                string conString = "Data Source=DESKTOP-2F5L5LM\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
+                //string conString = "Data Source=FINN\\SQLEXPRESS;Initial Catalog=QLTC;Integrated Security=True";
                 SqlConnection con = new SqlConnection(conString);
                 con.Open();
                 try

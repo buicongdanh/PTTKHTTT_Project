@@ -101,7 +101,7 @@ namespace PTTKHTTT_Project
                 {
                     command.Parameters.AddWithValue("@MADON", DonMua);
                     command.Parameters.AddWithValue("@MAKH", Menu_KH.MaKH);
-                    command.Parameters.AddWithValue("@NGAYDATMUA", "");
+                    command.Parameters.AddWithValue("@NGAYDATMUA", DateTime.Today.ToString("yyyy-MM-dd"));
 
                     try
                     {
