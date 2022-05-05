@@ -20,6 +20,8 @@ namespace PTTKHTTT_Project
 
         private void TT_DKTiemChung_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             String q = "select * from PHIEUDKTIEM WHERE MAKH = '" + Menu_KH.MaKH + "'";
 
             try
