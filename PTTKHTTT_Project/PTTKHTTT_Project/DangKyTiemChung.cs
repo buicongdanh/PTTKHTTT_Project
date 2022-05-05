@@ -103,6 +103,7 @@ namespace PTTKHTTT_Project
             {
                 MessageBox.Show("Thong tin dang ky khong hop le, vui long nhap lai!");
             }
+
             else if (ChonVaccine_Le.dgv_Le_Public.RowCount == 1 || ChonVaccine_Nhom.dgv_Nhom_Public.RowCount == 1)
             {
                 MessageBox.Show("Ban chua chon vaccine!");

@@ -14,7 +14,7 @@ namespace PTTKHTTT_Project
     public partial class ChonVaccine_Nhom : Form
     {
         public static DataGridView dgv_Nhom_Public = new DataGridView();
-        public static double tongtien = 0;
+        public static double tongtien;
 
         public ChonVaccine_Nhom()
         {
@@ -23,6 +23,8 @@ namespace PTTKHTTT_Project
 
         private void ChonVaccine_Nhom_Load(object sender, EventArgs e)
         {
+            tongtien = 0;
+
             dgv_Nhom_Public.Rows.Clear();
             dgv_Nhom_Public.Refresh();
 

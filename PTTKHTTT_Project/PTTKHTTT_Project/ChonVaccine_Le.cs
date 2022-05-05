@@ -14,7 +14,7 @@ namespace PTTKHTTT_Project
     public partial class ChonVaccine_Le : Form
     {
         public static DataGridView dgv_Le_Public = new DataGridView();
-        public static double tongtien = 0;
+        public static double tongtien;
 
         public ChonVaccine_Le()
         {
@@ -23,6 +23,8 @@ namespace PTTKHTTT_Project
 
         private void ChonVaccine_Le_Load(object sender, EventArgs e)
         {
+            tongtien = 0;
+
             dgv_Le_Public.Rows.Clear();
             dgv_Le_Public.Refresh();
 
@@ -104,7 +106,7 @@ namespace PTTKHTTT_Project
                                 dgv_Le_Public.Rows.Add(dgvR.Cells[1].Value, soluong.ToString(), dgvR.Cells[5].Value);
 
                                 double dongia = Convert.ToDouble(dgvR.Cells[5].Value.ToString());
-                                tongtien += dongia;
+                                tongtien += dongia * soluong;
                                 label4.Text = "Gia: " + tongtien.ToString();
                             }
                             catch (Exception ex)
