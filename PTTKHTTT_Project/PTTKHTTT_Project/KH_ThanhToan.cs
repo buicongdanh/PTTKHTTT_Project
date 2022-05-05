@@ -76,6 +76,8 @@ namespace PTTKHTTT_Project
 
         private void KH_ThanhToan_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             //Load value for combo box
             try
             {

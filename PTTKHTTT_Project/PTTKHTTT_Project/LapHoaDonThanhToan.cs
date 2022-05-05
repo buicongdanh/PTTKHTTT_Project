@@ -20,7 +20,7 @@ namespace PTTKHTTT_Project
         private void LapHoaDonThanhToan_Load(object sender, EventArgs e)
         {
             String q = "select * from DONMUAVC";
-
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             try
             {
                 SqlDataAdapter adp = new SqlDataAdapter(q, Menu_NV.con);

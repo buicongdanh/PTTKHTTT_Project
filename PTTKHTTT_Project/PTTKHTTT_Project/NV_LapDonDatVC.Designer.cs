@@ -75,7 +75,7 @@ namespace PTTKHTTT_Project
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(230, 185);
+            this.textBox3.Location = new System.Drawing.Point(230, 182);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 1;
@@ -83,7 +83,7 @@ namespace PTTKHTTT_Project
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(127, 188);
+            this.label3.Location = new System.Drawing.Point(127, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 2;

@@ -21,7 +21,8 @@ namespace PTTKHTTT_Project
         private void TT_DatVaccine_Load(object sender, EventArgs e)
         {
             String q = "select * from DONMUAVC WHERE MAKH = '" + Menu_KH.MaKH + "'";
-
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             try
             {
                 SqlDataAdapter adp = new SqlDataAdapter(q, Menu_NV.con);

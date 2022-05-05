@@ -40,6 +40,7 @@ namespace PTTKHTTT_Project
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(45, 126);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

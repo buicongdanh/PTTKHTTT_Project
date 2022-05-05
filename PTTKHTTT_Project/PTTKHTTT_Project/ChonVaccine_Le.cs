@@ -31,6 +31,7 @@ namespace PTTKHTTT_Project
             dataGridView2.Columns[1].Name = "TenVC";
             dataGridView2.Columns[2].Name = "SoLuong";
             dataGridView2.Columns[3].Name = "Gia";
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dgv_Le_Public.ColumnCount = 3;
             dgv_Le_Public.Columns[0].Name = "MaVC";
@@ -41,6 +42,7 @@ namespace PTTKHTTT_Project
             col1.UseColumnTextForButtonValue = true;
             col1.Text = "Huy";
             col1.Name = "";
+
             dataGridView2.Columns.Add(col1);
 
             String q = "select * from vaccine";
@@ -60,6 +62,9 @@ namespace PTTKHTTT_Project
                     col.Text = "Chọn";
                     col.Name = "";
                     dataGridView1.Columns.Add(col);
+
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
                 }
 
                 foreach (DataGridViewColumn dgvCol in dataGridView1.Columns)

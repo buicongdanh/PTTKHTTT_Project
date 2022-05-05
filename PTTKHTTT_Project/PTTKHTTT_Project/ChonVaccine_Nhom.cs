@@ -29,12 +29,14 @@ namespace PTTKHTTT_Project
             dataGridView3.ColumnCount = 2;
             dataGridView3.Columns[0].Name = "MaGoi";
             dataGridView3.Columns[1].Name = "Thanh Tien";
+            dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dgv_Nhom_Public.ColumnCount = 3;
             dgv_Nhom_Public.Columns[0].Name = "MaVC";
             dgv_Nhom_Public.Columns[1].Name = "SoLuong";
             dgv_Nhom_Public.Columns[2].Name = "Gia";
 
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             String q = "select * from goivc";
 
             try
@@ -51,6 +53,8 @@ namespace PTTKHTTT_Project
                     col2.Text = "Chọn";
                     col2.Name = "";
                     dataGridView1.Columns.Add(col2);
+
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
 
                 foreach (DataGridViewColumn dgvCol in dataGridView1.Columns)

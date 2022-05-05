@@ -72,7 +72,7 @@ namespace PTTKHTTT_Project
         private void NV_ThanhToan_Load(object sender, EventArgs e)
         {
             String q = "select * from HOADON";
-
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             try
             {
                 SqlDataAdapter adp = new SqlDataAdapter(q, Menu_NV.con);

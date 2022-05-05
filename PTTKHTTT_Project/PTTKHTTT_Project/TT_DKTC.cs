@@ -87,6 +87,8 @@ namespace PTTKHTTT_Project
 
         private void TT_DKTC_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             String q = "select * from PHIEUDKTIEM";
             if (textBox1.Text.Trim().Length > 0)
             {

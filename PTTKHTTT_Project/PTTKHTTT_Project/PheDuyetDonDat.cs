@@ -22,6 +22,8 @@ namespace PTTKHTTT_Project
 
         private void PheDuyetDonDat_Load(object sender, EventArgs e)
         {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             String q = "select * from DSDATVACCINE";
 
             try

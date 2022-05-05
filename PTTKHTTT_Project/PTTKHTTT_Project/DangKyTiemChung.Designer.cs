@@ -223,7 +223,7 @@ namespace PTTKHTTT_Project
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label9.Location = new System.Drawing.Point(516, 238);
+            this.label9.Location = new System.Drawing.Point(493, 244);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(132, 20);
             this.label9.TabIndex = 7;
@@ -235,7 +235,7 @@ namespace PTTKHTTT_Project
             this.comboBox1.Items.AddRange(new object[] {
             "Tiêm theo gói",
             "Tiêm lẻ"});
-            this.comboBox1.Location = new System.Drawing.Point(654, 238);
+            this.comboBox1.Location = new System.Drawing.Point(653, 240);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(204, 24);
             this.comboBox1.TabIndex = 8;
@@ -243,7 +243,7 @@ namespace PTTKHTTT_Project
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(879, 233);
+            this.button1.Location = new System.Drawing.Point(896, 235);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 33);
             this.button1.TabIndex = 9;
