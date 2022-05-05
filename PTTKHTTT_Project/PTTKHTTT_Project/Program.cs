@@ -16,7 +16,7 @@ namespace PTTKHTTT_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu_KH("KH000002"));
+            Application.Run(new Menu_KH("KH000001"));
         }
     }
 }

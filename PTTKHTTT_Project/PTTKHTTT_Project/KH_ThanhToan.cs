@@ -20,7 +20,8 @@ namespace PTTKHTTT_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String query = "UPDATE HOADON SET tinhtrang = 'CHODUYET',HINHTHUC=@HINHTHUC WHERE MAHD=@MAHD AND SOTIEN=@SOTIEN AND HINHTHUC!='HOANTHANH'";
+            String query = "INSERT INTO HOADON VALUES('@MAHD', '@HINHTHUC', @SOTIEN, '@MADON', @DOTT, 'DTT')";
+            
             using (SqlCommand command = new SqlCommand(query, Menu_KH.con))
             {
                 string temp = textBox2.Text;
@@ -28,11 +29,16 @@ namespace PTTKHTTT_Project
                 temp = textBox6.Text;
                 command.Parameters.AddWithValue("@HINHTHUC", temp);
                 temp = textBox3.Text;
-                command.Parameters.AddWithValue("@SOTIEN", temp);
+                command.Parameters.AddWithValue("@SOTIEN", Convert.ToDouble(temp));
+                temp = comboBox1.Text;
+                command.Parameters.AddWithValue("@MADON", temp);
+                temp = textBox4.Text;
+                command.Parameters.AddWithValue("@DOTT", int.Parse(temp));
+                
                 try
                 {
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Thanh Toan Hoa Don CHO DUYET");
+                    MessageBox.Show("Thanh Toan Hoa Don Thanh Cong");
                 }
                 catch (Exception ex)
                 {
