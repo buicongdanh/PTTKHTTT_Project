@@ -24,7 +24,7 @@ namespace PTTKHTTT_Project
 
             try
             {
-                SqlDataAdapter adp = new SqlDataAdapter(q, Menu_NV.con);
+                SqlDataAdapter adp = new SqlDataAdapter(q, Menu_KH.con);
                 DataSet ds = new DataSet();
                 adp.Fill(ds);
 

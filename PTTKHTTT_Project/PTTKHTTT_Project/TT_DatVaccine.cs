@@ -25,7 +25,7 @@ namespace PTTKHTTT_Project
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             try
             {
-                SqlDataAdapter adp = new SqlDataAdapter(q, Menu_NV.con);
+                SqlDataAdapter adp = new SqlDataAdapter(q, Menu_KH.con);
                 DataSet ds = new DataSet();
                 adp.Fill(ds);
 
