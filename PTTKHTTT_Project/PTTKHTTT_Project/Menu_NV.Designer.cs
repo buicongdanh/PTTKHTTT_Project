@@ -180,7 +180,7 @@ namespace PTTKHTTT_Project
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.panel_Childform);
             this.Controls.Add(this.panel_Heading);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Menu_NV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu_NV";
