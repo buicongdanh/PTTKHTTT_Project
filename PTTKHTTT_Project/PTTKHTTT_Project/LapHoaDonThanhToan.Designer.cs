@@ -45,12 +45,13 @@ namespace PTTKHTTT_Project
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(201, 170);
+            this.textBox5.Location = new System.Drawing.Point(232, 210);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(281, 22);
@@ -58,7 +59,7 @@ namespace PTTKHTTT_Project
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(201, 135);
+            this.textBox4.Location = new System.Drawing.Point(232, 175);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(281, 22);
@@ -66,7 +67,7 @@ namespace PTTKHTTT_Project
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(201, 100);
+            this.textBox3.Location = new System.Drawing.Point(232, 140);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(281, 22);
@@ -74,7 +75,7 @@ namespace PTTKHTTT_Project
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(201, 25);
+            this.textBox2.Location = new System.Drawing.Point(232, 65);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(281, 22);
@@ -83,7 +84,7 @@ namespace PTTKHTTT_Project
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(60, 170);
+            this.label8.Location = new System.Drawing.Point(91, 210);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 17);
             this.label8.TabIndex = 18;
@@ -92,7 +93,7 @@ namespace PTTKHTTT_Project
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(111, 135);
+            this.label7.Location = new System.Drawing.Point(142, 175);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 17);
             this.label7.TabIndex = 19;
@@ -101,7 +102,7 @@ namespace PTTKHTTT_Project
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(111, 100);
+            this.label6.Location = new System.Drawing.Point(142, 140);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 17);
             this.label6.TabIndex = 20;
@@ -110,7 +111,7 @@ namespace PTTKHTTT_Project
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(115, 28);
+            this.label2.Location = new System.Drawing.Point(146, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 21;
@@ -129,7 +130,7 @@ namespace PTTKHTTT_Project
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(407, 217);
+            this.button1.Location = new System.Drawing.Point(438, 257);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 32);
@@ -158,7 +159,7 @@ namespace PTTKHTTT_Project
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 66);
+            this.label3.Location = new System.Drawing.Point(58, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 17);
             this.label3.TabIndex = 21;
@@ -166,7 +167,7 @@ namespace PTTKHTTT_Project
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(201, 63);
+            this.textBox6.Location = new System.Drawing.Point(232, 103);
             this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(281, 22);
@@ -185,7 +186,7 @@ namespace PTTKHTTT_Project
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(539, 19);
+            this.button3.Location = new System.Drawing.Point(570, 59);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(123, 35);
             this.button3.TabIndex = 29;
@@ -193,11 +194,22 @@ namespace PTTKHTTT_Project
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(171, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(159, 20);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Thông tin hóa đơn";
+            // 
             // LapHoaDonThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 945);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -243,5 +255,6 @@ namespace PTTKHTTT_Project
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label4;
     }
 }
